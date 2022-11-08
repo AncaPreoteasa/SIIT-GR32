@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="author" content="Anca Preoteasa">
+    <title>Page Layout Homework</title>
+    <meta charset="utf-8>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .blocks-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr auto 0.5fr auto;
+        }
+
+        .block1 {
+            grid-column-end: span 4;
+            position: relative;
+        }
+
+        .nav-buttons {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 30px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            align-content: space-between;
+            justify-content: space-between;
+        }
+
+
+        .nav-buttons a {
+            margin: 0 15px;
+        }
+
+        .nav-button-left {
+            color: white;
+            font-weight: bolder;
+            font-size: xx-large;
+            text-decoration: none;
+        }
+
+        .nav-buttons-right {
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-button-left:hover, .nav-buttons-right:hover {
+            background-color: white;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .nav-button-left:hover {
+            font-size: xx-large;
+        }
+
+        .nav-buttons-right:hover {
+            font-size: larger;
+        }
+
+        .nav-contact-button {
+            color: black;
+            text-decoration: none;
+            font-weight: 1000;
+            font-size: small;
+            padding: 10px 15px;
+            border-radius: 17px;
+            background-color: white;
+            text-transform: uppercase;
+        }
+
+        .nav-contact-button:hover {
+            color: white;
+            background-color: rgba(0, 255, 255, 0.581);
+            font-size: large;
+        }
+
+        .heading1 {
+            position: absolute;
+            top: 20%;
+            text-align: center;
+            width: 100%;
+            color: white;
+            letter-spacing: 10px;
+            font-size: xxx-large;
+        }
+
+        .down-arrow {
+            position: absolute;
+            top: 35%;
+            text-align: center;
+            width: 100%;
+            font-size: 5em;
+            color: white;
+        }
+
+        .block1>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-view-box: inset(20% 0% 44% 0%);
+        }
+
+        .block2 {
+            grid-column-end: span 2;
+            display: flex;
+            justify-content: center;
+            align-content: stretch;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 70px;
+        }
+
+        .block2 a,
+        .block5 a {
+            color: black;
+            text-transform: uppercase;
+            font-weight: 1000;
+            font-size: small;
+        }
+
+        .block2 a {
+            text-decoration: solid underline rgb(255, 255, 124) 5px;
+        }
+
+        .block2 a:hover, .block5 a:hover {
+            font-size: large;
+        }
+
+        .block3 {
+            grid-column-end: span 2;
+        }
+
+        .block3>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-view-box: inset(50% 50% 20% 5%)
+        }
+
+        .block4 {
+            grid-column-end: span 2;
+        }
+
+        .block4>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-view-box: inset(20% 0% 16% 0%);
+        }
+
+        .block5 {
+            grid-column-end: span 2;
+            display: flex;
+            justify-content: center;
+            align-content: stretch;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 70px;
+        }
+
+        .block5 a {
+            text-decoration: solid underline #f5c9d0 5px;
+        }
+
+        .block6 {
+            grid-column-end: span 2;
+            position: relative;
+        }
+
+        .block6>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-view-box: inset(45% 0% 0% 0%);
+        }
+        
+        .cherry-text,
+        .orange-text {
+            position: absolute;
+            top: 65%;
+            padding: 0 20%;
+            text-align: center;
+            opacity: 0.6;
+        }
+
+        .block7 {
+            grid-column-end: span 2;
+            position: relative;
+        }
+
+        .block7>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-view-box: inset(45% 0% 0% 0%);
+        }
+
+        .block8 {
+            grid-column-end: span 4;
+            display: flex;
+            align-content: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 8%;
+            margin-bottom: 4%;
+        }
+
+        .clients-pictures {
+            width: 20%;
+            height: 20%;
+            border-radius: 100%;
+        }
+
+        .clients-messages {
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            justify-content: space-between;
+            padding: 60px;
+        }
+
+        .clients-messages>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .clients-messages>div>p {
+            text-align: center;
+            color: rgb(75, 75, 75);
+        }
+
+        .clients-name {
+            font-weight: bold;
+        }
+
+        .clients-position,
+        .clients-testimonials {
+            color: rgb(139, 140, 142);
+        }
+
+        .clients-testimonials {
+            letter-spacing: 2px;
+            font-size: medium;
+            font-family: serif;
+            text-transform: uppercase;
+        }
+
+        .clients-position {
+            opacity: 0.7;
+            margin-top: 0;
+        }
+
+        .block9 {}
+
+        .block9>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-view-box: inset(30% 20% 30% 45%);
+        }
+
+        .block10>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-view-box: inset(36% 22% 0% 0%);
+        }
+
+        .block11>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-view-box: inset(8% 0% 21% 0%)
+        }
+
+        .block12>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-view-box: inset(25% 0% 15% 30%);
+        }
+
+        .block13 {
+            grid-column-end: span 4;
+            background-color: rgb(144, 212, 197);
+            color: rgb(46, 117, 101);
+            padding: 2%;
+        }
+
+        .block13>* {
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        .block13 a {
+            padding: 0 10px;
+            text-decoration: none;
+            color: rgb(46, 117, 101);
+            font-size: small;
+            opacity: 0.9;
+        }
+
+        .footer-buttons a {
+            padding: 0% 1%;
+        }
+        
+        .social-media-icons {
+            padding-top: 3%;
+        }
+
+        .footer-buttons a:hover,  .social-media-icons a:hover {
+            background-color: white;
+            border-radius: 10px;
+            font-size: large;
+            padding: 5px 10px;
+        }
+
+        .social-media-icons a {
+            background-color: rgb(144, 212, 197);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="blocks-container">
+        <div class="block1">
+            <img src="images/half-orange.webp"></img>
+            <div class="nav-buttons">
+                <div>
+                    <a href="sunnyside" class="nav-button-left">sunnyside</a>
+                </div>
+                <div>
+                    <a href="about" class="nav-buttons-right">About</a>
+                    <a href="services" class="nav-buttons-right">Services</a>
+                    <a href="projects" class="nav-buttons-right">Projects</a>
+                    <a href="contacts" class="nav-contact-button">Contact</a>
+                </div>
+            </div>
+            <h1 class="heading1">WE ARE CREATIVES</h1>
+            <h1 class="down-arrow">↓</h1>
+        </div>
+        <div class="block2">
+            <h1>Transform your <br> brand</h1>
+            <p>We are a full-service creative agency specializing in <br> helping brands grow fast. Engage your clients
+                through <br> compelling visuals than do most of the marketing for you.</p>
+            <a href="#more">Learn more</a>
+        </div>
+        <div class="block3">
+            <img src="images/egg.webp"></img>
+        </div>
+        <div class="block4">
+            <img src="images/pink-glass.webp"></img>
+        </div>
+        <div class="block5">
+            <h1>Stand out to the right <br> audience</h1>
+            <p>Using a collaborative formula of designers, researchers, <br> photographers, videographers, and
+                copywriters,
+                we'll <br> build and extend your brand in digital places.</p>
+            <a href="#more">Learn more</a>
+        </div>
+        <div class="block6">
+            <img src="images/cherry.webp"></img>
+            <div class="cherry-text">
+                <h2>Graphic Design</h2>
+                <p>Great design makes you memorable. We deliver artwork that underscores your brandmessage and captures
+                    potential clients' attention.
+                </p>
+            </div>
+        </div>
+        <div class="block7">
+            <img src="images/orange.webp"></img>
+            <div class="orange-text">
+                <h2>Photography</h2>
+                <p>Increase your credibility by getting the most stunning, high-quality photos that improve your
+                    business
+                    image.
+                </p>
+            </div>
+        </div>
+        <div class="block8">
+            <h3 class="clients-testimonials"> Client testimonials</h3>
+            <div class="clients-messages">
+                <div>
+                    <img src="images/female-client.jpg" class="clients-pictures"></img>
+                    <p>We put our trust in Sunnyside and they <br> delivered, making sure our needs were met <br> and
+                        deadlines
+                        were always hit.
+                    </p>
+                    <p class="clients-name">Emily R.</p>
+                    <p class="clients-position">Marketing Director</p>
+                </div>
+                <div>
+                    <img src="images/male-client.webp" class="clients-pictures"></img>
+                    <p>Sunnyside's enthusiasm coupled with their <br> keen interest in our brand's success made it <br>
+                        a
+                        satisfying and enjoyable experience.
+                    </p>
+                    <p class="clients-name">Thomas S.</p>
+                    <p class="clients-position">Chief Operating Officer</p>
+                </div>
+                <div>
+                    <img src="images/female-client2.webp" class="clients-pictures"></img>
+                    <p>Incredible end result! Our sales increased <br> over 400% when we worked with Sunnyside. <br>
+                        Highly
+                        recommended!
+                    </p>
+                    <p class="clients-name">Jenny F.</p>
+                    <p class="clients-position">Business Owner</p>
+                </div>
+            </div>
+        </div>
+        <div class="block9">
+            <img src="images/milk.webp"></img>
+        </div>
+        <div class="block10">
+            <img src="images/plate-orange.webp"></img>
+        </div>
+        <div class="block11">
+            <img src="images/icecream-cone.webp"></img>
+        </div>
+        <div class="block12">
+            <img src="images/sugar.webp"></img>
+        </div>
+        <div class="block13">
+            <h2>sunnyside</h2>
+            <div class="footer-buttons">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+            </div>
+            <div class="social-media-icons">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-pinterest"></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
