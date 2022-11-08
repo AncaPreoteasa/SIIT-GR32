@@ -36,53 +36,22 @@
             justify-content: space-between;
         }
 
-
-        .nav-buttons a {
-            margin: 0 15px;
+        .nav-button {
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            padding: 10px;
         }
 
-        .nav-button-left {
-            color: white;
+        .nav-button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .nav-button-large {
             font-weight: bolder;
             font-size: xx-large;
-            text-decoration: none;
-        }
-
-        .nav-buttons-right {
-            color: white;
-            text-decoration: none;
-        }
-
-        .nav-button-left:hover, .nav-buttons-right:hover {
-            background-color: white;
-            color: black;
-            padding: 5px 10px;
-            border-radius: 20px;
-        }
-
-        .nav-button-left:hover {
-            font-size: xx-large;
-        }
-
-        .nav-buttons-right:hover {
-            font-size: larger;
-        }
-
-        .nav-contact-button {
-            color: black;
-            text-decoration: none;
-            font-weight: 1000;
-            font-size: small;
-            padding: 10px 15px;
-            border-radius: 17px;
-            background-color: white;
-            text-transform: uppercase;
-        }
-
-        .nav-contact-button:hover {
-            color: white;
-            background-color: rgba(0, 255, 255, 0.581);
-            font-size: large;
         }
 
         .heading1 {
@@ -104,10 +73,13 @@
             color: white;
         }
 
-        .block1>img {
+        .cover-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .block1>img {
             object-view-box: inset(20% 0% 44% 0%);
         }
 
@@ -118,7 +90,7 @@
             align-content: stretch;
             flex-direction: column;
             align-items: flex-start;
-            padding: 70px;
+            padding: 10% 20% 10% 10%;
         }
 
         .block2 a,
@@ -133,18 +105,11 @@
             text-decoration: solid underline rgb(255, 255, 124) 5px;
         }
 
-        .block2 a:hover, .block5 a:hover {
-            font-size: large;
-        }
-
         .block3 {
             grid-column-end: span 2;
         }
 
         .block3>img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
             object-view-box: inset(50% 50% 20% 5%)
         }
 
@@ -153,9 +118,6 @@
         }
 
         .block4>img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
             object-view-box: inset(20% 0% 16% 0%);
         }
 
@@ -166,7 +128,7 @@
             align-content: stretch;
             flex-direction: column;
             align-items: flex-start;
-            padding: 70px;
+            padding: 10% 10% 10% 20%;
         }
 
         .block5 a {
@@ -179,12 +141,9 @@
         }
 
         .block6>img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
             object-view-box: inset(45% 0% 0% 0%);
         }
-        
+
         .cherry-text,
         .orange-text {
             position: absolute;
@@ -200,9 +159,6 @@
         }
 
         .block7>img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
             object-view-box: inset(45% 0% 0% 0%);
         }
 
@@ -227,7 +183,7 @@
             display: flex;
             flex-direction: row;
             align-content: center;
-            justify-content: space-between;
+            justify-content: center;
             padding: 60px;
         }
 
@@ -240,6 +196,8 @@
         .clients-messages>div>p {
             text-align: center;
             color: rgb(75, 75, 75);
+            padding: 16px 24px;
+            max-width: 18em;
         }
 
         .clients-name {
@@ -263,33 +221,19 @@
             margin-top: 0;
         }
 
-        .block9 {}
-
         .block9>img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
             object-view-box: inset(30% 20% 30% 45%);
         }
 
         .block10>img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
             object-view-box: inset(36% 22% 0% 0%);
         }
 
         .block11>img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
             object-view-box: inset(8% 0% 21% 0%)
         }
 
         .block12>img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
             object-view-box: inset(25% 0% 15% 30%);
         }
 
@@ -306,74 +250,148 @@
         }
 
         .block13 a {
-            padding: 0 10px;
+            padding: 10px;
             text-decoration: none;
             color: rgb(46, 117, 101);
             font-size: small;
             opacity: 0.9;
         }
 
-        .footer-buttons a {
-            padding: 0% 1%;
-        }
-        
+        .footer-buttons,
         .social-media-icons {
-            padding-top: 3%;
+            padding: 10px;
         }
 
-        .footer-buttons a:hover,  .social-media-icons a:hover {
+        .footer-buttons a:hover,
+        .social-media-icons a:hover {
             background-color: white;
             border-radius: 10px;
-            font-size: large;
-            padding: 5px 10px;
         }
 
         .social-media-icons a {
             background-color: rgb(144, 212, 197);
         }
+    </style>
+    
+    <style>
+          /* Form integration: */
+          .contact-block {
+            grid-column-end: span 4;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-image: linear-gradient(rgb(71, 48, 130), rgb(64, 143, 162));
+            display: flex;
+            justify-content: center;
+        }
 
+        .contact-block-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 500px;
+            color: white;
+        }
+
+        .contact-block-wrapper * {
+            /*I needed it to align the forms with the heading and the Send-Message button*/
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .contact-text {
+            font-size: 60px;
+            font-weight: 100;
+            margin-bottom: 0;
+        }
+
+        .questions-text {
+            font-size: 18.6px;
+            font-weight: 100;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .name {
+            width: 100%;
+            height: 40px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
+        .email {
+            width: 100%;
+            height: 40px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
+        .star {
+            margin-left: 5px;
+        }
+
+        .text-area {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .send-button {
+            background-color: rgb(3, 138, 206);
+            color: white;
+            width: 100%;
+            height: 50px;
+            margin: 20px 0px 100px 0px;
+            font-size: large;
+            border: 2px solid;
+            border-color: rgb(6, 110, 165);
+            box-shadow: 0px 2px 12px -7px black;
+        }
+
+        .send-button:hover {
+            cursor: pointer;
+            background-color: rgba(245, 245, 220, 0.618);
+            color: black;
+        }
     </style>
 </head>
 
 <body>
     <div class="blocks-container">
         <div class="block1">
-            <img src="images/half-orange.webp"></img>
+            <img class="cover-image" src="images/half-orange.webp"></img>
             <div class="nav-buttons">
                 <div>
-                    <a href="sunnyside" class="nav-button-left">sunnyside</a>
+                    <a href="sunnyside" class="nav-button nav-button-large">sunnyside</a>
                 </div>
                 <div>
-                    <a href="about" class="nav-buttons-right">About</a>
-                    <a href="services" class="nav-buttons-right">Services</a>
-                    <a href="projects" class="nav-buttons-right">Projects</a>
-                    <a href="contacts" class="nav-contact-button">Contact</a>
+                    <a href="about" class="nav-button">About</a>
+                    <a href="services" class="nav-button">Services</a>
+                    <a href="projects" class="nav-button">Projects</a>
+                    <a href="contacts" class="nav-button">CONTACT</a>
                 </div>
             </div>
             <h1 class="heading1">WE ARE CREATIVES</h1>
             <h1 class="down-arrow">↓</h1>
         </div>
         <div class="block2">
-            <h1>Transform your <br> brand</h1>
-            <p>We are a full-service creative agency specializing in <br> helping brands grow fast. Engage your clients
-                through <br> compelling visuals than do most of the marketing for you.</p>
+            <h1>Transform your brand</h1>
+            <p>We are a full-service creative agency specializing in helping brands grow fast. Engage your clients
+                through compelling visuals than do most of the marketing for you.</p>
             <a href="#more">Learn more</a>
         </div>
         <div class="block3">
-            <img src="images/egg.webp"></img>
+            <img class="cover-image" src="images/egg.webp"></img>
         </div>
         <div class="block4">
-            <img src="images/pink-glass.webp"></img>
+            <img class="cover-image" src="images/pink-glass.webp"></img>
         </div>
         <div class="block5">
-            <h1>Stand out to the right <br> audience</h1>
-            <p>Using a collaborative formula of designers, researchers, <br> photographers, videographers, and
+            <h1>Stand out to the right audience</h1>
+            <p>Using a collaborative formula of designers, researchers, photographers, videographers, and
                 copywriters,
-                we'll <br> build and extend your brand in digital places.</p>
+                we'll build and extend your brand in digital places.</p>
             <a href="#more">Learn more</a>
         </div>
         <div class="block6">
-            <img src="images/cherry.webp"></img>
+            <img class="cover-image" src="images/cherry.webp"></img>
             <div class="cherry-text">
                 <h2>Graphic Design</h2>
                 <p>Great design makes you memorable. We deliver artwork that underscores your brandmessage and captures
@@ -382,7 +400,7 @@
             </div>
         </div>
         <div class="block7">
-            <img src="images/orange.webp"></img>
+            <img class="cover-image" src="images/orange.webp"></img>
             <div class="orange-text">
                 <h2>Photography</h2>
                 <p>Increase your credibility by getting the most stunning, high-quality photos that improve your
@@ -396,7 +414,7 @@
             <div class="clients-messages">
                 <div>
                     <img src="images/female-client.jpg" class="clients-pictures"></img>
-                    <p>We put our trust in Sunnyside and they <br> delivered, making sure our needs were met <br> and
+                    <p>We put our trust in Sunnyside and they delivered, making sure our needs were met and
                         deadlines
                         were always hit.
                     </p>
@@ -405,8 +423,7 @@
                 </div>
                 <div>
                     <img src="images/male-client.webp" class="clients-pictures"></img>
-                    <p>Sunnyside's enthusiasm coupled with their <br> keen interest in our brand's success made it <br>
-                        a
+                    <p>Sunnyside's enthusiasm coupled with their keen interest in our brand's success made it a
                         satisfying and enjoyable experience.
                     </p>
                     <p class="clients-name">Thomas S.</p>
@@ -414,7 +431,7 @@
                 </div>
                 <div>
                     <img src="images/female-client2.webp" class="clients-pictures"></img>
-                    <p>Incredible end result! Our sales increased <br> over 400% when we worked with Sunnyside. <br>
+                    <p>Incredible end result! Our sales increased over 400% when we worked with Sunnyside.
                         Highly
                         recommended!
                     </p>
@@ -424,16 +441,32 @@
             </div>
         </div>
         <div class="block9">
-            <img src="images/milk.webp"></img>
+            <img class="cover-image" src="images/milk.webp"></img>
         </div>
         <div class="block10">
-            <img src="images/plate-orange.webp"></img>
+            <img class="cover-image" src="images/plate-orange.webp"></img>
         </div>
         <div class="block11">
-            <img src="images/icecream-cone.webp"></img>
+            <img class="cover-image" src="images/icecream-cone.webp"></img>
         </div>
         <div class="block12">
-            <img src="images/sugar.webp"></img>
+            <img class="cover-image" src="images/sugar.webp"></img>
+        </div>
+        <div class="contact-block">
+            <div class="contact-block-wrapper">
+                <h1 class="contact-text">Contact Us</h1>
+                <h2 class="questions-text">Got a question? We'd love to hear from you. Send us a message and we'll
+                    respond as soon as possible.</h2>
+                <form class="form">
+                    <label class="name" for="name">Name*</label>
+                    <input class="name" type="text" id="name" name="name" required></input>
+                    <label class="email" for="email">Email address<span class="star">*</span></label>
+                    <input class="email" type="text" id="email" name="email" required></input>
+                    <label for="text">Message</label>
+                    <textarea class="text-area" id="message" name="message" rows="7"></textarea>
+                    <input class="send-button" type="submit" value="Send Message"></input>
+                </form>
+            </div>
         </div>
         <div class="block13">
             <h2>sunnyside</h2>
@@ -443,10 +476,10 @@
                 <a href="#projects">Projects</a>
             </div>
             <div class="social-media-icons">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-instagram"></a>
-                <a href="#" class="fa fa-twitter"></a>
-                <a href="#" class="fa fa-pinterest"></a>
+                <a href="https://facebook.com" class="fa fa-facebook"></a>
+                <a href="https://instagram.com" class="fa fa-instagram"></a>
+                <a href="https://twitter.com" class="fa fa-twitter"></a>
+                <a href="https://instagram.com" class="fa fa-pinterest"></a>
             </div>
         </div>
     </div>
