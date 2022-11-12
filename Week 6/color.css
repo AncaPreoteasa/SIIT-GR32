@@ -1,0 +1,17 @@
+.primary-color {
+    color: white;
+}
+.secondary-color {
+    color: rgb(137, 33, 216)
+}
+.primary-background-color {
+    background-color: rgb(29, 5, 47);
+}
+
+.secondary-background-color {
+    background-color: rgb(22 4 19);
+}
+
+.filter-background-color {
+    background-color: rgba(106, 5, 81, 0.5);
+}
