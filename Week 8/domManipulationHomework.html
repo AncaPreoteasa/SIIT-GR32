@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<htm>
+
+    <head>
+        <meta name="author" content="Anca Preoteasa">
+        <title>JavaScript Rock, Paper, Scissors DOM Manipulation - Homework</title>
+        <meta charset="utf-8>">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Week 6/global.css">
+        <link rel="stylesheet" href="domManipulationHomework.css">
+    </head>
+
+    <body>
+        <script src="domManipulationHomework.js"></script>
+
+        <div id="intro-game" onclick="showGame()">
+            <h1>Rock, Paper, Scissors</h1>
+            <button>PLAY</button>
+        </div>
+        <div class="hidden" id="game">
+            <div>
+                <h2>Player</h2>
+                <p id="counter-player-winner">0</p>
+            </div>
+            <div>
+                <p>Vs</p>
+            </div>
+            <div>
+                <div>Computer</div>
+                <p id="counter-computer-winner">0</p>
+            </div>
+            <div>
+                <h2>Choose</h2>
+            </div>
+            <div>
+                <h2 id="winner-announcement"></h2>
+                <h2 id="winner-explanation"></h2>
+            </div>
+            <div>
+                <img src="rock paper scissors images/rock.svg" onclick="calculateAndDisplayWinnerforRock()" class="rock-image" width="100" height="100" alt="rock image"></img>
+                <img src="rock paper scissors images/paper.svg" onclick="calculateAndDisplayWinnerforPaper()" class="paper-image" width="100" height="100" alt="paper image"></img>
+                <img src="rock paper scissors images/scissors.svg" onclick="calculateAndDisplayWinnerforScissors()" class="scissors-image" width="100" height="100" alt="scissors image"></img>
+            </div>
+            <audio src="audio/lose.wav" id="lose-sound"></audio>
+            <audio src="audio/victory.wav" id="win-sound"></audio>
+            <audio src="audio/draw.wav" id="draw-sound"></audio>
+        </div>
+    </body>
+</htm>

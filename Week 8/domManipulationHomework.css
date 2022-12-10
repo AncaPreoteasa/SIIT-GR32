@@ -1,0 +1,16 @@
+#game {
+    transition: ease 2s;
+}
+#intro-game {
+    transition: ease 0.1s;
+}
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.rock-image:hover,
+.paper-image:hover,
+.scissors-image:hover {
+    cursor: pointer;
+}
