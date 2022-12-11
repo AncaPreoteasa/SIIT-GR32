@@ -1,31 +1,41 @@
+const ROCK_PAPER_SCISSORS_OPTIONS = ['rock', 'paper', 'scissors'];
+
 function play() {
-    const ROCK_PAPER_SCISSORS_OPTIONS = ['rock', 'paper', 'scissors'];
 
-    var computerRandomOptionNb = Math.floor(Math.random() * ROCK_PAPER_SCISSORS_OPTIONS.length);
-    var computerChoice = ROCK_PAPER_SCISSORS_OPTIONS[computerRandomOptionNb];
+    const computerChoice = generateGameOption();
+    const userChoice = generateGameOption();
 
-    var userRandomOptionNb = Math.floor(Math.random() * ROCK_PAPER_SCISSORS_OPTIONS.length);
-    var userChoice = ROCK_PAPER_SCISSORS_OPTIONS[userRandomOptionNb];
+    const hasComputerWon = computerChoice === ROCK_PAPER_SCISSORS_OPTIONS[0] && userChoice === ROCK_PAPER_SCISSORS_OPTIONS[2] ||
+        computerChoice === ROCK_PAPER_SCISSORS_OPTIONS[1] && userChoice === ROCK_PAPER_SCISSORS_OPTIONS[0] ||
+        computerChoice === ROCK_PAPER_SCISSORS_OPTIONS[2] && userChoice === ROCK_PAPER_SCISSORS_OPTIONS[1];
+
+    const hasUserWon = computerChoice === ROCK_PAPER_SCISSORS_OPTIONS[0] && userChoice === ROCK_PAPER_SCISSORS_OPTIONS[1] ||
+        computerChoice === ROCK_PAPER_SCISSORS_OPTIONS[1] && userChoice === ROCK_PAPER_SCISSORS_OPTIONS[2] ||
+        computerChoice === ROCK_PAPER_SCISSORS_OPTIONS[2] && userChoice === ROCK_PAPER_SCISSORS_OPTIONS[0];
 
     var gameResultMessage;
-    if (computerRandomOptionNb === 0 && userRandomOptionNb === 2) {
-        gameResultMessage = 'User loses!';
-    } else if (computerRandomOptionNb === 1 && userRandomOptionNb === 0) {
-        gameResultMessage = 'User loses!';
-    } else if (computerRandomOptionNb === 2 && userRandomOptionNb === 1) {
-        gameResultMessage = 'User loses!';
-    } else if (computerRandomOptionNb === 0 && userRandomOptionNb === 1) {
-        gameResultMessage = 'User wins!';
-    } else if (computerRandomOptionNb === 1 && userRandomOptionNb === 2) {
-        gameResultMessage = 'User wins!';
-    } else if (computerRandomOptionNb === 2 && userRandomOptionNb === 0) {
+
+    if (hasComputerWon) {
+        gameResultMessage = 'Computer wins!';
+    } else if (hasUserWon) {
         gameResultMessage = 'User wins!';
     } else {
         gameResultMessage = "It's a draw!";
     }
 
-    var computerChoiceMessage = 'Computer choice: "' + firstLetterToUpperCase(computerChoice) + '"';
-    var userChoiceMessage = 'User choice: "' + firstLetterToUpperCase(userChoice) + '"';
+    displayWinner(computerChoice, userChoice, gameResultMessage);
+}
+
+function generateGameOption() {
+    const randomNumber = Math.floor(Math.random() * ROCK_PAPER_SCISSORS_OPTIONS.length);
+
+    return ROCK_PAPER_SCISSORS_OPTIONS[randomNumber];
+}
+
+function displayWinner(computerChoice, userChoice, gameResultMessage) {
+    const computerChoiceMessage = 'Computer choice: "' + firstLetterToUpperCase(computerChoice) + '"';
+    const userChoiceMessage = 'User choice: "' + firstLetterToUpperCase(userChoice) + '"';
+
     console.log(computerChoiceMessage + '\n' + userChoiceMessage + '\n\n' + gameResultMessage);
 }
 
