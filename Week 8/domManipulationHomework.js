@@ -1,5 +1,4 @@
-
-const ROCK_PAPER_SCISSORS_OPTIONS = ['rock', 'paper', 'scissors'];
+const ROCK_PAPER_SCISSORS_OPTIONS = ['Rock', 'Paper', 'Scissors'];
 let computerCounterWins = 0;
 let playerCounterWins = 0;
 
@@ -15,7 +14,7 @@ function calculateAndDisplayWinnerforRock() {
     const computerChoice = generateGameOption();
     const hasComputerWon = computerChoice === ROCK_PAPER_SCISSORS_OPTIONS[1];
     const hasUserWon = computerChoice === ROCK_PAPER_SCISSORS_OPTIONS[2];
-    const userChoice = "Rock";
+    const userChoice = ROCK_PAPER_SCISSORS_OPTIONS[0];
 
     displayWinner(computerChoice, userChoice, hasComputerWon, hasUserWon);
 }
@@ -24,7 +23,7 @@ function calculateAndDisplayWinnerforPaper() {
     const computerChoice = generateGameOption();
     const hasComputerWon = computerChoice === ROCK_PAPER_SCISSORS_OPTIONS[2];
     const hasUserWon = computerChoice === ROCK_PAPER_SCISSORS_OPTIONS[0];
-    const userChoice = "Paper";
+    const userChoice = ROCK_PAPER_SCISSORS_OPTIONS[1];
     displayWinner(computerChoice, userChoice,  hasComputerWon, hasUserWon);
 }
 
@@ -32,7 +31,7 @@ function calculateAndDisplayWinnerforScissors() {
     const computerChoice = generateGameOption();
     const hasComputerWon = computerChoice === ROCK_PAPER_SCISSORS_OPTIONS[0];
     const hasUserWon = computerChoice === ROCK_PAPER_SCISSORS_OPTIONS[1];
-    const userChoice = "Scissors";
+    const userChoice = ROCK_PAPER_SCISSORS_OPTIONS[2];
     displayWinner(computerChoice, userChoice, hasComputerWon, hasUserWon);
 }
 
@@ -42,8 +41,7 @@ function generateGameOption() {
 }
 
 function displayWinner(computerChoice, userChoice, hasComputerWon, hasUserWon) {
-    let gameResultMessage;
-        
+    let gameResultMessage; 
     if (hasComputerWon) {
         computerUpdateScore();
         gameResultMessage = 'Computer wins!';
@@ -58,10 +56,26 @@ function displayWinner(computerChoice, userChoice, hasComputerWon, hasUserWon) {
 
     const winnerAnnouncementElem = document.getElementById("winner-announcement");
     if (winnerAnnouncementElem.firstChild) {
-        winnerAnnouncementElem.removeChild(winnerAnnouncementElem.firstChild);
+        winnerAnnouncementElem.firstChild.remove();
     }
     const textWinnerAnnouncement = document.createTextNode(gameResultMessage);
     winnerAnnouncementElem.appendChild(textWinnerAnnouncement);
+
+
+
+    var explanationMessage;
+    if (hasComputerWon) {
+        explanationMessage = computerChoice + " beats " + userChoice + "!";
+    } else if (hasUserWon) {
+        explanationMessage = userChoice + " beats " + computerChoice + "!";
+    } else {
+        explanationMessage = userChoice + " matches " + computerChoice + "!";
+    }
+    var winnerExplanationElement = document.getElementById("winner-explanation");
+    if (winnerExplanationElement.firstChild) {
+        winnerExplanationElement.firstChild.remove();
+    }
+    winnerExplanationElement.appendChild(document.createTextNode(explanationMessage));
 
 }
 
@@ -69,7 +83,7 @@ function computerUpdateScore() {
     computerCounterWins++;
     const computerWinsParagraph = document.getElementById("counter-computer-winner");
     const computeWinsTextNode = computerWinsParagraph.firstChild;
-    computerWinsParagraph.removeChild(computeWinsTextNode);
+    computeWinsTextNode.remove();
 
     const newTextNode = document.createTextNode(computerCounterWins);
     computerWinsParagraph.appendChild(newTextNode);
@@ -81,8 +95,7 @@ function computerUpdateScore() {
 function playerUpdateScore() {
     playerCounterWins++;
     const playerWinsCounterParagraph = document.getElementById("counter-player-winner");
-    const playerWinsParagraphTextNode = playerWinsCounterParagraph.firstChild;
-    playerWinsCounterParagraph.removeChild(playerWinsParagraphTextNode);
+    playerWinsCounterParagraph.firstChild.remove();
 
     const newTextNode = document.createTextNode(playerCounterWins);
     playerWinsCounterParagraph.appendChild(newTextNode);

@@ -1,9 +1,26 @@
+html {
+    background-image: linear-gradient(to right, rgb(73, 47, 140), rgb(64, 143, 162));
+    height: 100%;
+}
+
 #game {
     transition: ease 2s;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
+
 #intro-game {
     transition: ease 0.1s;
+    padding-top: 100px;
 }
+
 .hidden {
     visibility: hidden;
     opacity: 0;
@@ -14,3 +31,77 @@
 .scissors-image:hover {
     cursor: pointer;
 }
+
+.rock-paper-scissors-container {
+    margin: 20px;
+}
+.rock-paper-scissors-images {
+    margin: 0 15px;
+}
+
+h1, .intro-h1-play-btn, h2, #counter-player-winner, #counter-computer-winner {
+    font-weight: 300;
+    font-size: 40px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.903);
+}
+
+#counter-computer-winner, #counter-player-winner {
+    margin-top: 10px;
+}
+
+#vs-text {
+    margin: 0 70px;
+}
+.rock-paper-scissors-intro-img {
+    margin-top: 40px;
+    border-radius: 50%;
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 30px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.903);
+}
+
+.choose-text {
+    margin-top: 40px;    
+    margin-bottom: 20px;    
+}
+
+#winner-announcement, #winner-explanation {
+    margin: 15px 0;
+    min-height: 1em;
+} 
+
+#play-btn {
+    font-size: 25px;
+    padding: 10px 25px;
+    color: rgba(255, 255, 255, 0.903);
+    background-color: dodgerblue;
+    border: 2px solid;
+    border-radius: 20px;
+    border-color: rgba(255, 255, 255, 0.903);
+    margin-top: 20px;
+}
+
+#play-btn:hover {
+    cursor: pointer;
+    color: dodgerblue;
+    background-color: rgba(255, 255, 255, 0.903);
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.score-text-counter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
