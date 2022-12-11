@@ -1,0 +1,130 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .is-obese-class {
+            color: red;
+            font-size: 4em;
+        }
+
+        .is-overweight-class {
+            color: orange;
+            font-size: 3em;
+        }
+
+        .is-normal-class {
+            color: green;
+        }
+
+        .is-underweight-class {
+            color: blue;
+            font-size: 1em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container"></div>
+    <script>
+
+        var person1 = {
+            name: "John Doe",
+            gender: "M",
+            height: 1.77,
+            weight: 90
+        }
+
+        var person2 = {
+            name: "Mary Anne",
+            gender: "F",
+            height: 1.65,
+            weight: 60
+        }
+
+        var person3 = {
+            name: "George Smith",
+            gender: "M",
+            height: 1.97,
+            weight: 150
+        }
+
+        var person4 = {
+            name: "Helen Hilton",
+            gender: "F",
+            height: 1.60,
+            weight: 30
+        }
+
+        var personArray = [person1, person2, person3, person4];
+
+        for (var i = 0; i < personArray.length; i++) {
+            var currentPerson = personArray[i];
+
+            var currentPersonBMI = calculateBMI(currentPerson.weight, currentPerson.height);
+
+            var bmiStatus = decideWeightStatus(currentPersonBMI);
+
+            logOutputMessage(currentPerson, currentPersonBMI, bmiStatus)
+            // console.log(currentPerson.name + " | " + currentPerson.gender + " | BMI: " + currentPersonBMI + " | " + bmiStatus);
+        }
+
+        function calculateBMI(weight, height) {
+            return (weight / (height * height)).toFixed(2);
+        }
+        function decideWeightStatus(bmi) {
+            var bmiStatus;
+
+            if (bmi < 18.5) {
+                bmiStatus = "Underweight";
+            } else if (bmi < 25) {
+                bmiStatus = "Normal Weight";
+            } else if (bmi < 30) {
+                bmiStatus = "Overweight";
+            } else {
+                bmiStatus = "Obese";
+            }
+
+            return bmiStatus;
+        }
+        function logOutputMessage(person, bmi, weightStatus) {
+
+            //console.log(person.name + " | " + person.gender + " | BMI: " + bmi + " | " + weightStatus);
+            const h1 = document.createElement("h1");
+            const textToShow = person.name + " | " + person.gender + " | BMI: " + bmi + " | " + weightStatus;
+            h1.appendChild(document.createTextNode(textToShow));
+            const container = document.getElementById("container");
+            container.appendChild(h1);
+
+            if (weightStatus === "Obese")
+                h1.setAttribute("class", "is-obese-class");
+
+            if (weightStatus === "Overweight")
+                h1.setAttribute("class", "is-overweight-class");
+
+            if (weightStatus === "Normal Weight")
+                h1.setAttribute("class", "is-normal-class");
+
+            if (weightStatus === "Underweight")
+                h1.setAttribute("class", "is-underweight-class");
+
+
+            h1.addEventListener("click", addText);
+        }
+
+        function addText() {
+            const createParagraph = document.createElement("p");
+            const paragraphText = document.createTextNode("LoremIpsum");
+
+            createParagraph.appendChild(paragraphText);
+            const container = document.getElementById("container");
+            container.appendChild(createParagraph);
+        }
+    </script>
+</body>
+
+</html>
