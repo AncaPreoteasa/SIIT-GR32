@@ -2,6 +2,11 @@ const ROCK_PAPER_SCISSORS_OPTIONS = ['Rock', 'Paper', 'Scissors'];
 let computerCounterWins = 0;
 let playerCounterWins = 0;
 
+document.getElementById("play-btn").addEventListener("click", showGame);
+document.getElementsByClassName("rock-image")[0].addEventListener("click", calculateAndDisplayWinnerforRock);
+document.getElementsByClassName("paper-image")[0].addEventListener("click", calculateAndDisplayWinnerforPaper);
+document.getElementsByClassName("scissors-image")[0].addEventListener("click", calculateAndDisplayWinnerforScissors);
+
 function showGame() {
     const introGameDiv = document.getElementById("intro-game");
     introGameDiv.classList.add("hidden");
