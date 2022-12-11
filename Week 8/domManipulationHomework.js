@@ -9,6 +9,8 @@
     document.getElementsByClassName("scissors-image")[0].addEventListener("click", calculateAndDisplayWinnerforScissors);
 
     function showGame() {
+        document.getElementById("intro-sound").play();
+
         const introGameDiv = document.getElementById("intro-game");
         introGameDiv.classList.add("hidden");
         
@@ -47,6 +49,8 @@
     }
 
     function displayWinner(computerChoice, userChoice, hasComputerWon, hasUserWon) {
+        document.getElementById("intro-sound").pause();
+
         let gameResultMessage; 
         if (hasComputerWon) {
             computerUpdateScore();
