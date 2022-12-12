@@ -92,8 +92,8 @@
     function computerUpdateScore() {
         computerCounterWins++;
         const computerWinsParagraph = document.getElementById("counter-computer-winner");
-        const computeWinsTextNode = computerWinsParagraph.firstChild;
-        computeWinsTextNode.remove();
+        const computerWinsTextNode = computerWinsParagraph.firstChild;
+        computerWinsTextNode.remove();
 
         const newTextNode = document.createTextNode(computerCounterWins);
         computerWinsParagraph.appendChild(newTextNode);
