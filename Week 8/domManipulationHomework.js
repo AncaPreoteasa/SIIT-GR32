@@ -73,7 +73,7 @@
 
 
 
-        var explanationMessage;
+        let explanationMessage;
         if (hasComputerWon) {
             explanationMessage = computerChoice + " beats " + userChoice + "!";
         } else if (hasUserWon) {
@@ -81,7 +81,7 @@
         } else {
             explanationMessage = userChoice + " matches " + computerChoice + "!";
         }
-        var winnerExplanationElement = document.getElementById("winner-explanation");
+        const winnerExplanationElement = document.getElementById("winner-explanation");
         if (winnerExplanationElement.firstChild) {
             winnerExplanationElement.firstChild.remove();
         }
