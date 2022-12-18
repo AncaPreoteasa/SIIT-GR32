@@ -25,7 +25,10 @@
             font-size: 1em;
         }
 
-        .is-obese-class:hover, .is-normal-class:hover, .is-overweight-class:hover, .is-underweight-class:hover {
+        .is-obese-class:hover,
+        .is-normal-class:hover,
+        .is-overweight-class:hover,
+        .is-underweight-class:hover {
             cursor: pointer;
         }
     </style>
@@ -36,52 +39,50 @@
     <div id="container"></div>
     <script>
 
-        var person1 = {
+        const person1 = {
             name: "John Doe",
             gender: "M",
             height: 1.77,
             weight: 90
         }
 
-        var person2 = {
+        const person2 = {
             name: "Mary Anne",
             gender: "F",
             height: 1.65,
             weight: 60
         }
 
-        var person3 = {
+        const person3 = {
             name: "George Smith",
             gender: "M",
             height: 1.97,
             weight: 150
         }
 
-        var person4 = {
+        const person4 = {
             name: "Helen Hilton",
             gender: "F",
             height: 1.60,
             weight: 30
         }
 
-        var personArray = [person1, person2, person3, person4];
+        const personArray = [person1, person2, person3, person4];
 
         for (var i = 0; i < personArray.length; i++) {
-            var currentPerson = personArray[i];
+            const currentPerson = personArray[i];
+            const currentPersonBMI = calculateBMI(currentPerson.weight, currentPerson.height);
+            const bmiStatus = decideWeightStatus(currentPersonBMI);
 
-            var currentPersonBMI = calculateBMI(currentPerson.weight, currentPerson.height);
-
-            var bmiStatus = decideWeightStatus(currentPersonBMI);
-
-            logOutputMessage(currentPerson, currentPersonBMI, bmiStatus)
-            // console.log(currentPerson.name + " | " + currentPerson.gender + " | BMI: " + currentPersonBMI + " | " + bmiStatus);
+            showOutputMessage(currentPerson, currentPersonBMI, bmiStatus);
         }
 
         function calculateBMI(weight, height) {
             return (weight / (height * height)).toFixed(2);
         }
+
         function decideWeightStatus(bmi) {
-            var bmiStatus;
+            let bmiStatus;
 
             if (bmi < 18.5) {
                 bmiStatus = "Underweight";
@@ -95,8 +96,8 @@
 
             return bmiStatus;
         }
-        function logOutputMessage(person, bmi, weightStatus) {
-
+        
+        function showOutputMessage(person, bmi, weightStatus) {
             //console.log(person.name + " | " + person.gender + " | BMI: " + bmi + " | " + weightStatus);
             const h1 = document.createElement("h1");
             const textToShow = person.name + " | " + person.gender + " | BMI: " + bmi + " | " + weightStatus;
@@ -104,42 +105,34 @@
             const container = document.getElementById("container");
             container.appendChild(h1);
 
-            if (weightStatus === "Obese")
-                h1.setAttribute("class", "is-obese-class");
-
-            if (weightStatus === "Overweight")
-                h1.setAttribute("class", "is-overweight-class");
-
-            if (weightStatus === "Normal Weight")
-                h1.setAttribute("class", "is-normal-class");
-
-            if (weightStatus === "Underweight")
-                h1.setAttribute("class", "is-underweight-class");
-
-
             let textDependOnWeightStatus;
             if (weightStatus === "Obese") {
+                h1.setAttribute("class", "is-obese-class");
                 textDependOnWeightStatus = "Obesity is a medical condition, sometimes considered a disease,[8][9][10] in which excess body fat has accumulated to such an extent that it may negatively affect health. ";
             } else if (weightStatus === "Overweight") {
+                h1.setAttribute("class", "is-overweight-class");
                 textDependOnWeightStatus = "Being overweight or fat is having more body fat than is optimally healthy. Being overweight is especially common where food supplies are plentiful and lifestyles are sedentary.";
             } else if (weightStatus === "Normal Weight") {
+                h1.setAttribute("class", "is-normal-class");
                 textDependOnWeightStatus = "Ideal body weight (IBW) was initially introduced by Ben J. Devine in 1974 to allow estimation of drug clearances in obese patients.";
             } else {
+                h1.setAttribute("class", "is-underweight-class");
                 textDependOnWeightStatus = "An underweight person is a person whose body weight is considered too low to be healthy. A person who is underweight is malnourished.";
             }
 
-                
-            h1.addEventListener("click", function() {
-                addText(textDependOnWeightStatus);
+
+            h1.addEventListener("click", function () {
+                let theMainContainerId = "container";
+                showText(textDependOnWeightStatus, theMainContainerId);
             });
         }
 
-        function addText(diffTextforEachStatus) {
+        function showText(text, parentID) {
             const createParagraph = document.createElement("p");
-            const paragraphText = document.createTextNode(diffTextforEachStatus);
+            const paragraphText = document.createTextNode(text);
 
             createParagraph.appendChild(paragraphText);
-            const container = document.getElementById("container");
+            const container = document.getElementById(parentID);
             container.appendChild(createParagraph);
         }
     </script>
