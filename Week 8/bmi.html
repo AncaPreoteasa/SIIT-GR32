@@ -37,8 +37,8 @@
 
 <body>
     <div id="container"></div>
-    <script>
 
+    <script>
         const person1 = {
             name: "John Doe",
             gender: "M",
@@ -49,8 +49,8 @@
         const person2 = {
             name: "Mary Anne",
             gender: "F",
-            height: 1.65,
-            weight: 60
+            height: 1.77,
+            weight: 90
         }
 
         const person3 = {
@@ -98,7 +98,6 @@
         }
         
         function showOutputMessage(person, bmi, weightStatus) {
-            //console.log(person.name + " | " + person.gender + " | BMI: " + bmi + " | " + weightStatus);
             const h1 = document.createElement("h1");
             const textToShow = person.name + " | " + person.gender + " | BMI: " + bmi + " | " + weightStatus;
             h1.appendChild(document.createTextNode(textToShow));
@@ -121,20 +120,25 @@
             }
 
 
+            const textOnClickContainer = document.createElement("div");
+            container.appendChild(textOnClickContainer);
+
             h1.addEventListener("click", function () {
                 let theMainContainerId = "container";
-                showText(textDependOnWeightStatus, theMainContainerId);
+                //showText(textDependOnWeightStatus, theMainContainerId);
+                showTextMessage(textDependOnWeightStatus, textOnClickContainer);
             });
         }
 
-        function showText(text, parentID) {
-            const createParagraph = document.createElement("p");
+        function showTextMessage (text, container) {
+            const textParagraph = document.createElement("p");
             const paragraphText = document.createTextNode(text);
 
-            createParagraph.appendChild(paragraphText);
-            const container = document.getElementById(parentID);
-            container.appendChild(createParagraph);
+            textParagraph.appendChild(paragraphText);
+
+            container.appendChild(textParagraph);
         }
+
     </script>
 </body>
 
