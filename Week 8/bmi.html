@@ -7,28 +7,31 @@
     <title>Document</title>
     <style>
         .is-obese-class {
-            color: red;
             font-size: 4em;
+        }
+        .is-obese-class span {
+            color: red;
+            cursor: pointer;
         }
 
         .is-overweight-class {
-            color: orange;
             font-size: 3em;
         }
-
-        .is-normal-class {
+        .is-overweight-class span {
+            color: orange;
+            cursor: pointer;
+        }
+        
+        .is-normal-class span {
             color: green;
+            cursor: pointer;
         }
 
         .is-underweight-class {
-            color: blue;
             font-size: 1em;
         }
-
-        .is-obese-class:hover,
-        .is-normal-class:hover,
-        .is-overweight-class:hover,
-        .is-underweight-class:hover {
+        .is-underweight-class span {
+            color: blue;
             cursor: pointer;
         }
     </style>
@@ -46,10 +49,13 @@
                 this.height = height;
                 this.weight = weight;
             }    
+            calculateBMI(){
+                return (this.weight / (this.height * this.height)).toFixed(2);
+            }
         }
 
         const person1 = new Person("John Doe", "M", 1.77, 90);
-        const person2 = new Person("Mary Anne", "F", 1.77, 90);
+        const person2 = new Person("Mary Anne", "F", 1.65, 60);
         const person3 = new Person("George Smith", "M", 1.97, 150);
         const person4 = new Person("Helen Hilton", "F", 1.60, 30);
 
@@ -57,14 +63,10 @@
 
         for (var i = 0; i < personArray.length; i++) {
             const currentPerson = personArray[i];
-            const currentPersonBMI = calculateBMI(currentPerson.weight, currentPerson.height);
+            const currentPersonBMI = currentPerson.calculateBMI();
             const bmiStatus = decideWeightStatus(currentPersonBMI);
 
             showOutputMessage(currentPerson, currentPersonBMI, bmiStatus);
-        }
-
-        function calculateBMI(weight, height) {
-            return (weight / (height * height)).toFixed(2);
         }
 
         function decideWeightStatus(bmi) {
@@ -85,8 +87,15 @@
         
         function showOutputMessage(person, bmi, weightStatus) {
             const h1 = document.createElement("h1");
-            const textToShow = person.name + " | " + person.gender + " | BMI: " + bmi + " | " + weightStatus;
+            const textToShow = person.name + " | " + person.gender + " | BMI: " + bmi + " | ";
             h1.appendChild(document.createTextNode(textToShow));
+
+            const weightStatusElement = document.createElement("span");
+            const weightStatusTextNode = document.createTextNode(weightStatus);
+            weightStatusElement.appendChild(weightStatusTextNode);
+
+            h1.appendChild(weightStatusElement);
+
             const container = document.getElementById("container");
             container.appendChild(h1);
 
@@ -109,7 +118,7 @@
             const textOnClickContainer = document.createElement("div");
             container.appendChild(textOnClickContainer);
 
-            h1.addEventListener("click", function () {
+            weightStatusElement.addEventListener("click", function () {
                 let theMainContainerId = "container";
                 showTextMessage(textDependOnWeightStatus, textOnClickContainer);
             });
