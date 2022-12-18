@@ -39,33 +39,19 @@
     <div id="container"></div>
 
     <script>
-        const person1 = {
-            name: "John Doe",
-            gender: "M",
-            height: 1.77,
-            weight: 90
+        class Person {
+            constructor(name, gender, height, weight){
+                this.name = name;
+                this.gender = gender;
+                this.height = height;
+                this.weight = weight;
+            }    
         }
 
-        const person2 = {
-            name: "Mary Anne",
-            gender: "F",
-            height: 1.77,
-            weight: 90
-        }
-
-        const person3 = {
-            name: "George Smith",
-            gender: "M",
-            height: 1.97,
-            weight: 150
-        }
-
-        const person4 = {
-            name: "Helen Hilton",
-            gender: "F",
-            height: 1.60,
-            weight: 30
-        }
+        const person1 = new Person("John Doe", "M", 1.77, 90);
+        const person2 = new Person("Mary Anne", "F", 1.77, 90);
+        const person3 = new Person("George Smith", "M", 1.97, 150);
+        const person4 = new Person("Helen Hilton", "F", 1.60, 30);
 
         const personArray = [person1, person2, person3, person4];
 
@@ -125,7 +111,6 @@
 
             h1.addEventListener("click", function () {
                 let theMainContainerId = "container";
-                //showText(textDependOnWeightStatus, theMainContainerId);
                 showTextMessage(textDependOnWeightStatus, textOnClickContainer);
             });
         }
