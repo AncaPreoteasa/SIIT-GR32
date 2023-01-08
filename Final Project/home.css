@@ -41,8 +41,7 @@ body main .projects-section {
   margin: 100px;
   background-color: rgb(152, 149, 149);
 }
-body main .projects-section h2,
-body main .projects-section h3 {
+body main .projects-section h2, body main .projects-section h3 {
   padding: 30px;
 }
 body main .projects-section .image-container {
@@ -57,37 +56,37 @@ body main .contact-section {
   margin: 100px;
   background-color: rgb(152, 149, 149);
 }
-body main .contact-section .contact-form-container {
+body main .contact-section .description-form-container {
   display: flex;
 }
-body main .contact-section .contact-form-container > * {
+body main .contact-section .description-form-container > * {
   margin: 40px;
 }
-body main .contact-section .contact-form-container .contact-heading-paragraph-container {
+body main .contact-section .description-form-container .description-container {
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: space-between;
 }
-body main .contact-section .contact-form-container .name-email-phone-message-send-container {
+body main .contact-section .description-form-container .form-container {
   display: flex;
   flex-direction: column;
 }
-body main .contact-section .contact-form-container .name-email-phone-message-send-container > * {
+body main .contact-section .description-form-container .form-container > * {
   margin: 4px;
 }
-body main .contact-section .contact-form-container .name-email-phone-message-send-container > .name-email-container {
+body main .contact-section .description-form-container .form-container > .name-email-container {
   display: flex;
   justify-content: space-between;
 }
-body main .contact-section .contact-form-container .name-email-phone-message-send-container > .name-email-container > #name {
+body main .contact-section .description-form-container .form-container > .name-email-container > #name {
   margin-right: 4px;
 }
-body main .contact-section .contact-form-container .name-email-phone-message-send-container #name,
-body main .contact-section .contact-form-container .name-email-phone-message-send-container #email,
-body main .contact-section .contact-form-container .name-email-phone-message-send-container #phone,
-body main .contact-section .contact-form-container .name-email-phone-message-send-container #message,
-body main .contact-section .contact-form-container .name-email-phone-message-send-container .send-button {
+body main .contact-section .description-form-container .form-container #name,
+body main .contact-section .description-form-container .form-container #email,
+body main .contact-section .description-form-container .form-container #phone,
+body main .contact-section .description-form-container .form-container #message,
+body main .contact-section .description-form-container .form-container .send-button {
   padding: 10px;
 }
 body main .contact-section .social-media-buttons {

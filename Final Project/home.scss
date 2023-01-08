@@ -43,8 +43,7 @@ body {
         }
         .projects-section {
             @include flex-sections;
-            h2,
-            h3 {
+            h2, h3 {
                 padding: 30px;
             }
             .image-container {
@@ -54,18 +53,18 @@ body {
         .contact-section {
             @include flex-sections;
 
-            .contact-form-container {
+            .description-form-container {
                 display: flex;
                 & > * {
                     margin: 40px;
                 }
-                & .contact-heading-paragraph-container {
+                & .description-container {
                     display: flex;
                     flex-direction: column;
                     align-content: center;
                     justify-content: space-between;
                 }
-                & .name-email-phone-message-send-container {
+                & .form-container {
                     display: flex;
                     flex-direction: column;
                     & > * {
