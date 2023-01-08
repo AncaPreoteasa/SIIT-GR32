@@ -25,7 +25,7 @@ body main .short-description-section {
   align-items: center;
   padding: 60px;
   margin: 100px;
-  background-color: rgb(152, 149, 149);
+  background-color: rgb(235, 235, 235);
 }
 body main .short-description-section p {
   padding: 40px 20px;
@@ -46,7 +46,7 @@ body main .projects-section {
   align-items: center;
   padding: 60px;
   margin: 100px;
-  background-color: rgb(152, 149, 149);
+  background-color: rgb(235, 235, 235);
 }
 body main .projects-section h2, body main .projects-section h3 {
   padding: 30px;
@@ -61,7 +61,7 @@ body main .contact-section {
   align-items: center;
   padding: 60px;
   margin: 100px;
-  background-color: rgb(152, 149, 149);
+  background-color: rgb(235, 235, 235);
 }
 body main .contact-section .description-form-container {
   display: flex;
