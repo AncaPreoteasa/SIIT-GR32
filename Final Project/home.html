@@ -6,26 +6,41 @@
     <title>Anca Preoteasa CV</title>
     <meta charset="uft-8>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css"/>
+    <link rel="stylesheet" href="home.css" />
     <link rel="stylesheet" href="../Week 6/global.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
     <script href="/home.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="logo.png" height="30" width="30" />
-        </div>
-        <div class="menu-container">
-            <span class="dark-mode-icon-container">
-                <img src="moon.png" height="30" width="30" />
-            </span>
-            <a href="#about-me-section">ABOUT ME</a>
-            <a href="#software-skills-section">SOFTWARE SKILLS</a>
-            <a href="#projects-section">PROJECTS</a>
-            <a href="#contact-section">CONTACT</a>
-        </div>
+    <header class="bg-body-tertiary">
+        <img class="logo" src="logo.png" height="30" width="30" />
+        <nav class="menu-container navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#about-me-section">ABOUT ME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#software-skills-section">SOFTWARE
+                                SKILLS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#projects-section">PROJECTS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#contact-section">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
     <main>
         <section class="my-name-section">
@@ -35,17 +50,47 @@
         <section class="short-description-section">
             <img src="logo.png" height="30" width="30" />
             <p>Eager to make use of the skills I have already achieved, as well as developing new ones.</p>
-            <button>DOWNLOAD RESUME</button>
+            <button type="button" class="btn btn-outline-light">DOWNLOAD RESUME</button>
         </section>
         <section class="skills-section">
             <h2>01 SOFTWARE SKILLS</h2>
-            <p>HTML</p>
-            <p>CSS</p>
-            <p>JavaScript</p>
-            <p>TypeScript</p>
-            <p>Angular</p>
-            <p>Bootstrap</p>
-            <p>SASS</p>
+            <div class="skill-bars-container">
+                <p>HTML</p>
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 25%">25%</div>
+                </div>
+                <p>CSS</p>
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 25%">25%</div>
+                </div>
+                <p>JavaScript</p>
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 25%">25%</div>
+                </div>
+                <p>TypeScript</p>
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 25%">25%</div>
+                </div>
+                <p>Angular</p>
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 25%">25%</div>
+                </div>
+                <p>Bootstrap</p>
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 25%">25%</div>
+                </div>
+                <p>SASS</p>
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 25%">25%</div>
+                </div>
+            </div>
         </section>
         <section class="projects-section">
             <h2>02 PROJECTS</h2>
@@ -66,12 +111,12 @@
                 </div>
                 <form class="form-container">
                     <div class="name-email-container">
-                        <textarea id="name" placeholder="Name" required=""></textarea>
-                        <textarea id="email" placeholder="Email" required=""></textarea>
+                        <input class="form-control mb-2 me-2" id="name" placeholder="Name" required=""></input>
+                        <input class="form-control mb-2" id="email" placeholder="Email" required=""></input>
                     </div>
-                    <textarea id="phone" placeholder="Phone" cols="40"></textarea>
-                    <textarea id="message" placeholder="Message" required=""></textarea>
-                    <button class="send-button">Send</button>
+                    <input class="form-control mb-2" id="phone" placeholder="Phone"></input>
+                    <textarea class="form-control mb-2" id="message" placeholder="Message" required=""></textarea>
+                    <button type="submit" class="btn btn-primary send-button">Send</button>
                 </form>
             </div>
             <div class="social-media-buttons">
@@ -81,10 +126,8 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div class="copyright-logo-container">
-            <img src="logo.png" height="30" width="30"></img>
-        </div>
+    <footer class="bg-body-tertiary">
+        <img src="logo.png" height="30" width="30"></img>
         <p class="copyright-container">&#169 2023 by Anca Preoteasa</p>
     </footer>
 </body>

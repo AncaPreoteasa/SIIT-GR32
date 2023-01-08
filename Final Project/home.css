@@ -7,15 +7,13 @@ body header {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   justify-items: center;
+  align-items: center;
 }
 body main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-body main > * {
-  max-width: 600px;
 }
 body main .my-name-section {
   padding: 10px 250px 10px 0;
@@ -31,6 +29,15 @@ body main .short-description-section {
 }
 body main .short-description-section p {
   padding: 40px 20px;
+}
+body main .skills-section .skill-bars-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+body main .skills-section .skill-bars-container p {
+  margin: 0 4px;
+  text-align: end;
 }
 body main .projects-section {
   display: flex;
@@ -67,20 +74,15 @@ body main .contact-section .description-form-container .description-container {
   flex-direction: column;
   align-content: center;
   justify-content: space-between;
+  max-width: 300px;
 }
 body main .contact-section .description-form-container .form-container {
   display: flex;
   flex-direction: column;
 }
-body main .contact-section .description-form-container .form-container > * {
-  margin: 4px;
-}
 body main .contact-section .description-form-container .form-container > .name-email-container {
   display: flex;
   justify-content: space-between;
-}
-body main .contact-section .description-form-container .form-container > .name-email-container > #name {
-  margin-right: 4px;
 }
 body main .contact-section .description-form-container .form-container #name,
 body main .contact-section .description-form-container .form-container #email,

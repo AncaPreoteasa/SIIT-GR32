@@ -19,6 +19,7 @@ body {
         display: grid;
         grid-template-columns: 1fr auto 1fr;
         justify-items: center;
+        align-items: center;
     }
  
     main {
@@ -26,10 +27,6 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        &>* {
-            max-width: 600px;
-        }
 
         .my-name-section {
             padding: 10px 250px 10px 0;
@@ -41,6 +38,19 @@ body {
                 padding: 40px 20px;
             }
         }
+
+        .skills-section {
+            .skill-bars-container {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                align-items: center;
+                p {
+                    margin: 0 4px;
+                    text-align: end;
+                }
+            }
+        }
+
         .projects-section {
             @include flex-sections;
             h2, h3 {
@@ -63,19 +73,14 @@ body {
                     flex-direction: column;
                     align-content: center;
                     justify-content: space-between;
+                    max-width: 300px;
                 }
                 & .form-container {
                     display: flex;
                     flex-direction: column;
-                    & > * {
-                        margin: 4px;
-                    }
                     & > .name-email-container {
                         display: flex;
                         justify-content: space-between;
-                        &>#name {
-                            margin-right: 4px;
-                        }
                     }
                     #name,
                     #email,
