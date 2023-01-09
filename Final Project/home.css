@@ -3,7 +3,8 @@ body header {
   position: sticky;
   top: 0;
   z-index: 1;
-  background: white;
+  background: rgb(185, 181, 193);
+  color: rgb(185, 181, 193);
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   justify-items: center;
@@ -14,9 +15,24 @@ body main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(58, 97, 97);
 }
 body main .my-name-section {
-  padding: 10px 250px 10px 0;
+  padding: 150px 250px 10px 0;
+}
+body main .my-name-section p {
+  font-size: 1.2em;
+  line-height: 2.5em;
+}
+body main .my-name-section h1 {
+  font-size: 4em;
+  font-weight: 700;
+  font-weight: 700;
+}
+body main .my-name-section h3 {
+  letter-spacing: 0.18em;
+  margin: 50px 0;
 }
 body main .short-description-section {
   display: flex;
@@ -25,10 +41,15 @@ body main .short-description-section {
   align-items: center;
   padding: 60px;
   margin: 100px;
-  background-color: rgb(235, 235, 235);
+  background-color: rgba(90, 145, 126, 0.795);
+  box-shadow: 5px;
 }
 body main .short-description-section p {
   padding: 40px 20px;
+  font-size: 1.2em;
+}
+body main .skills-section h2 {
+  padding: 30px;
 }
 body main .skills-section .skill-bars-container {
   display: grid;
@@ -38,6 +59,8 @@ body main .skills-section .skill-bars-container {
 body main .skills-section .skill-bars-container p {
   margin: 0 4px;
   text-align: end;
+  letter-spacing: 0.05em;
+  line-height: 2.8em;
 }
 body main .projects-section {
   display: flex;
@@ -46,13 +69,29 @@ body main .projects-section {
   align-items: center;
   padding: 60px;
   margin: 100px;
-  background-color: rgb(235, 235, 235);
+  background-color: rgba(90, 145, 126, 0.795);
+  box-shadow: 5px;
 }
-body main .projects-section h2, body main .projects-section h3 {
+body main .projects-section p {
+  font-size: 1.2em;
+}
+body main .projects-section h2,
+body main .projects-section h3 {
   padding: 30px;
+}
+body main .projects-section h2 {
+  font-weight: 700;
+}
+body main .projects-section h3 {
+  letter-spacing: 0.1em;
 }
 body main .projects-section .image-container {
   display: flex;
+  flex-wrap: wrap;
+}
+body main .projects-section .image-container img {
+  width: 300px;
+  height: 300px;
 }
 body main .contact-section {
   display: flex;
@@ -61,10 +100,15 @@ body main .contact-section {
   align-items: center;
   padding: 60px;
   margin: 100px;
-  background-color: rgb(235, 235, 235);
+  background-color: rgba(90, 145, 126, 0.795);
+  box-shadow: 5px;
 }
 body main .contact-section .description-form-container {
   display: flex;
+}
+body main .contact-section .description-form-container p {
+  line-height: 1.9em;
+  font-size: 1.2em;
 }
 body main .contact-section .description-form-container > * {
   margin: 40px;
@@ -75,6 +119,9 @@ body main .contact-section .description-form-container .description-container {
   align-content: center;
   justify-content: space-between;
   max-width: 300px;
+}
+body main .contact-section .description-form-container .description-container .personal-description {
+  margin: 20px 0;
 }
 body main .contact-section .description-form-container .form-container {
   display: flex;
@@ -101,6 +148,11 @@ body footer {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   justify-items: center;
+  align-items: center;
+  min-height: 80px;
+}
+body footer .copyright-container {
+  margin: 0px;
 }
 body .accent-color {
   color: green;
