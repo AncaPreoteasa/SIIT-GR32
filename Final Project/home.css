@@ -1,3 +1,7 @@
+body.dark-mode main {
+  background-color: black;
+}
+
 body header {
   position: -webkit-sticky;
   position: sticky;
@@ -47,6 +51,9 @@ body main .short-description-section {
 body main .short-description-section p {
   padding: 40px 20px;
   font-size: 1.2em;
+}
+body main .skills-section {
+  margin: 100px;
 }
 body main .skills-section h2 {
   padding: 30px;

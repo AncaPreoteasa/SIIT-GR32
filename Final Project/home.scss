@@ -10,6 +10,12 @@
     box-shadow: 5px;
 }
 
+body.dark-mode {
+    main {
+        background-color: black;
+    }
+}
+
 @mixin bold-headings {
     font-weight: 700;
 }
@@ -70,6 +76,7 @@ body {
         }
 
         .skills-section {
+            margin: 100px;
             h2 {
                 padding: 30px;
             }
