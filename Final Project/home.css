@@ -22,6 +22,9 @@ body main {
   color: rgb(255, 255, 255);
   background-color: rgb(58, 97, 97);
 }
+body main > * {
+  scroll-margin-top: 5em;
+}
 body main .my-name-section {
   padding: 150px 250px 10px 0;
 }
