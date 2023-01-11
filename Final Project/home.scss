@@ -12,7 +12,12 @@
 
 body.dark-mode {
     main {
-        background-color: black;
+        background-color: rgb(35, 33, 33);
+        color: rgb(231, 231, 231);
+        .short-description-section, .projects-section, .contact-section {
+            background-color: darkslategray;
+        }
+
     }
 }
 
@@ -45,8 +50,8 @@ body {
         align-items: center;
         color: rgb(255, 255, 255);
         background-color: rgb(58, 97, 97);
-        
-        & > * {
+
+        &>* {
             scroll-margin-top: 5em;
         }
 
@@ -81,6 +86,7 @@ body {
 
         .skills-section {
             margin: 100px;
+
             h2 {
                 padding: 30px;
             }
@@ -89,6 +95,10 @@ body {
                 display: grid;
                 grid-template-columns: auto 1fr;
                 align-items: center;
+
+                .progress-bar {
+                    background-color: darkseagreen;
+                }
 
                 p {
                     margin: 0 4px;
@@ -115,7 +125,7 @@ body {
                 @include bold-headings;
             }
 
-            h3 {    
+            h3 {
                 letter-spacing: 0.1em;
             }
 
@@ -126,6 +136,7 @@ body {
                 img {
                     width: 300px;
                     height: 300px;
+                    opacity: 0.9;
                 }
             }
         }
@@ -181,6 +192,9 @@ body {
 
                 a {
                     padding: 10px;
+                    font-size: 20px;
+                    text-decoration: none;
+                    color: white;
                 }
             }
         }

@@ -1,5 +1,9 @@
 body.dark-mode main {
-  background-color: black;
+  background-color: rgb(35, 33, 33);
+  color: rgb(231, 231, 231);
+}
+body.dark-mode main .short-description-section, body.dark-mode main .projects-section, body.dark-mode main .contact-section {
+  background-color: darkslategray;
 }
 
 body header {
@@ -66,6 +70,9 @@ body main .skills-section .skill-bars-container {
   grid-template-columns: auto 1fr;
   align-items: center;
 }
+body main .skills-section .skill-bars-container .progress-bar {
+  background-color: darkseagreen;
+}
 body main .skills-section .skill-bars-container p {
   margin: 0 4px;
   text-align: end;
@@ -102,6 +109,7 @@ body main .projects-section .image-container {
 body main .projects-section .image-container img {
   width: 300px;
   height: 300px;
+  opacity: 0.9;
 }
 body main .contact-section {
   display: flex;
@@ -153,6 +161,9 @@ body main .contact-section .social-media-buttons {
 }
 body main .contact-section .social-media-buttons a {
   padding: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
 }
 body footer {
   display: grid;
