@@ -1,0 +1,18 @@
+<table class="persons-container">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>BMI Value</th>
+      <th>BMI Status</th>
+      <th>More Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of persons">
+      <td>{{person.name}}</td>
+      <td class="bmi-value">{{person | bmiValue}}</td>
+      <td class="bmi-status {{person | bmiStatus}}">{{person | bmiStatus}}</td>
+      <td><button [routerLink]="['person-details']" [queryParams]="{id: person.id}">More Details</button></td>
+    </tr>
+  </tbody>
+</table>

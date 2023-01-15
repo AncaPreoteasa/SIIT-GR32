@@ -1,0 +1,20 @@
+nav {
+    background: #f2f2f2;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+nav ul { 
+    list-style-type: none;  
+}    
+
+body {
+    margin: 0;
+}

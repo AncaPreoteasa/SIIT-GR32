@@ -1,0 +1,40 @@
+.persons-container {
+    margin: 20px;
+}
+
+.bmi-status.underweight {
+    color:blue;
+    font-size: 0.8em;
+}
+
+.bmi-status.normal{
+    color: green;
+}
+
+.bmi-status.overweight {
+    color: orange;
+    font-size: 1.2em;
+}
+
+.bmi-status.obese {
+    color: red;
+    font-size: 1.4em;
+}
+
+button {
+    padding:5px;
+    margin: 0 20px;
+}
+
+table, th, td {
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 10px;
+}
+
+.bmi-value {
+    text-align: center;
+}
