@@ -239,11 +239,11 @@ main {
                 &>.name-email-container {
                     display: flex;
                     justify-content: space-between;
+                }
 
-                    input {
-                        body.dark-theme & {
-                            background-color: rgb(189, 189, 189);
-                        }
+                input, textarea {
+                    body.dark-theme & {
+                        background-color: rgb(229, 229, 229);
                     }
                 }
 
