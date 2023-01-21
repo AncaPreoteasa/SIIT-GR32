@@ -1,13 +1,10 @@
 @import '../mixins.scss';
 
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 1;
-    background: rgba(90, 145, 126, 0.795);
-    body.dark-theme & {
-        background-color: rgba(46, 82, 70, 0.795);
-    }
       
     nav {
         display: grid !important; // Boostrap's fault that it used important first so I don't have any options.
@@ -44,9 +41,5 @@ header {
                 background-color: rgb(113, 148, 148);
             }
         }
-    }
-
-    .accent-color {
-        color: green;
     }
 }

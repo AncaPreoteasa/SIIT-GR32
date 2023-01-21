@@ -25,6 +25,8 @@ main {
     justify-content: center;
     align-items: center;
 
+    margin-top: 60px; //compensate absolute header height.
+
     color: rgb(255, 255, 255);
     background-color: rgb(58, 97, 97);
     body.dark-theme & {
