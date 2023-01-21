@@ -124,19 +124,15 @@ main {
                 background-color: darkseagreen;
             }
 
-            & .progress-bar {
+            &.progress-start .progress-bar {
                 animation-name: fillprogress;
                 animation-duration: 5s;
-                animation-delay: 4s;
-                animation-iteration-count: 400s;
                 transition-timing-function: ease-in-out;
                 transition: width;
-
                 @keyframes fillprogress {
                     from {
                         width: 0px;
                     }
-
                     to {
                         width: attr(data-width);
                     }

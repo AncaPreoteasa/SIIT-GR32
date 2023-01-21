@@ -9,6 +9,10 @@ import { Output, EventEmitter } from '@angular/core';
 })
 
 export class HeaderComponent {
+  startProgressBarTransition() {
+    document.getElementsByClassName("skill-bars-container")[0].classList.add("progress-start")
+    
+  }
 
   @Output() toggleDarkThemeEvent = new EventEmitter<void>();
   isDarkTheme = false;
