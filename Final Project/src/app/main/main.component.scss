@@ -1,0 +1,276 @@
+@import '../mixins.scss';
+
+@mixin flex-sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+    margin: 5.5em 0.1em;
+
+    background-color: rgba(90, 145, 126, 0.795);
+    body.dark-theme & {
+        background-color: rgb(30, 52, 52);
+    }
+
+    @include devices(tablet) {
+        margin: 3em 0.1em;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: rgb(255, 255, 255);
+    background-color: rgb(58, 97, 97);
+    body.dark-theme & {
+        color: rgb(189, 189, 189);
+        background-color: rgb(35, 33, 33);
+    }
+
+    .accent-color {
+        color: green;
+    }
+
+    .my-name-section {
+        padding: 50px 20px;
+
+        @include devices(mobile) {
+            padding: 20px 10px 0 0;
+            font-size: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 2.5em;
+        }
+
+        h1 {
+            font-size: 4em;
+            font-weight: 700;
+
+            animation: my-name-load 600ms ease-in;
+            @keyframes my-name-load {
+                0% {
+                    transform: translateY(-100%);
+                }
+
+                100% {
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        h3 {
+            letter-spacing: 0.18em;
+            margin: 20px 0;
+
+            animation-name: slidein;
+            animation-duration: 2s;
+            animation-delay: 0.6s;
+            animation-iteration-count: 400s;
+            transition-timing-function: ease-in-out;
+            @keyframes slidein {
+                0% {
+                    margin-left: 0;
+                }
+                50% {
+                    margin-left: 300px;
+                }
+                100% {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    .short-description-section {
+        @include flex-sections;
+
+        @include devices(mobile) {
+            max-width: 400px;
+            margin: 20px 60px;
+        }
+
+        p {
+            padding: 40px 20px;
+            font-size: 1.2em;
+        }
+    }
+
+    .skills-section {
+        margin: 50px;
+
+        h2 {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .skill-bars-container {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+
+            .progress-bar {
+                background-color: darkseagreen;
+            }
+
+            & .progress-bar {
+                animation-name: fillprogress;
+                animation-duration: 5s;
+                animation-delay: 4s;
+                animation-iteration-count: 400s;
+                transition-timing-function: ease-in-out;
+                transition: width;
+
+                @keyframes fillprogress {
+                    from {
+                        width: 0px;
+                    }
+
+                    to {
+                        width: attr(data-width);
+                    }
+                }
+            }
+
+            p {
+                margin: 0 4px;
+                text-align: end;
+                letter-spacing: 0.05em;
+                line-height: 2.8em;
+            }
+        }
+    }
+
+    .projects-section {
+        @include flex-sections;
+
+        p {
+            font-size: 1.2em;
+        }
+
+        h2,
+        h3 {
+            padding: 10px;
+        }
+        h2 {
+            font-weight: 700;
+        }
+        h3 {
+            letter-spacing: 0.1em;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 50px 0;
+
+            .column {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                &>* {
+                    margin: 5px 10px;
+                }
+            }
+
+            img {
+                width: 300px;
+                height: 300px;
+            }
+
+            img:hover {
+                filter: brightness(50%);
+            }
+
+            p {
+                text-align: center;
+                margin-top: 20px;
+
+            }
+        }
+    }
+
+    .contact-section {
+        @include flex-sections;
+
+        .description-form-container {
+            @include devices(tablet) {
+                display: flex;
+                flex-direction: column;
+            }
+
+            p {
+                line-height: 1.9em;
+                font-size: 1.2em;
+            }
+
+            display: flex;
+
+            & > * {
+                margin: 20px;
+            }
+
+            & .description-container {
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                justify-content: space-between;
+                max-width: 300px;
+
+                .personal-description {
+                    margin: 20px 0;
+                }
+            }
+
+            & .form-container {
+                display: flex;
+                flex-direction: column;
+
+                &>.name-email-container {
+                    display: flex;
+                    justify-content: space-between;
+
+                    input {
+                        body.dark-theme & {
+                            background-color: rgb(189, 189, 189);
+                        }
+                    }
+                }
+
+                #name,
+                #email,
+                #phone,
+                #message,
+                .send-button {
+                    padding: 10px;
+                }
+            }
+        }
+
+        .social-media-buttons {
+            display: inline;
+
+            a {
+                padding: 10px;
+                font-size: 20px;
+                text-decoration: none;
+                color: white;
+                border: 1px solid rgb(203, 203, 203);
+                margin: 0 10px;
+                border-radius: 20%;
+            }
+
+            a:hover {
+                background-color: rgb(141, 195, 166);
+            }
+        }
+    }
+}

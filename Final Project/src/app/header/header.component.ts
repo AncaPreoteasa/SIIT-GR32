@@ -18,6 +18,7 @@ export class HeaderComponent {
   public onClickDarkTheme() {
     this.toggleDarkThemeEvent.emit();
   }
+  
   toggleCollapsed(): void {
     this.collapsed = !this.collapsed;
   }

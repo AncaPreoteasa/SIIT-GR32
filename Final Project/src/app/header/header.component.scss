@@ -10,18 +10,22 @@ header {
     }
       
     nav {
-        display: grid;
+        display: grid !important; // Boostrap's fault that it used important first so I don't have any options.
         grid-template-columns: 1fr auto 1fr;
-        
+
         @include devices(tablet) {
-            display: grid;
             grid-template-columns: 1fr auto;
             padding: 1em;
+        }
+
+        .navbar-nav {
+            margin: 0 25px;
         }
 
         .navbar-brand {
             display: flex;
             justify-content: center;
+            margin: 0 30px;
 
             @include devices(tablet) {
                 display: flex;

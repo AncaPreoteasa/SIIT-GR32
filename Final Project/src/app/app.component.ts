@@ -6,11 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-tour-of-heroes';
   
-  isDarkTheme = true;
+  isDarkTheme = false;
   
   toggleDarkTheme() {
-    this.isDarkTheme = !this.isDarkTheme;
+    this.isDarkTheme = ! this.isDarkTheme;
   }
 }

@@ -1,14 +1,14 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component , ViewEncapsulation} from '@angular/core';
 
 @Component({
-  selector: 'shortDescription-component',
-  templateUrl: './shortDescription.component.html',
-  styleUrls: ['./shortDescription.component.scss'],
+  selector: 'main-component',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 
-export class ShortDescriptionComponent {
-  downloadMyFile(){
+export class MainComponent {
+  downloadCvFile (){
     const link = document.createElement('a');
     link.setAttribute('target', '_blank');
     link.setAttribute('href', '/assets/CV-Europass-20190310-Preoteasa-EN-1.pdf');
@@ -18,3 +18,4 @@ export class ShortDescriptionComponent {
     link.remove();
   }
 }
+

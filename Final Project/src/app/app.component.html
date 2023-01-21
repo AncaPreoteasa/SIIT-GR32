@@ -19,14 +19,6 @@
 
 <body [ngClass]="isDarkTheme ? 'dark-theme' : ''">
     <header-component (toggleDarkThemeEvent)="toggleDarkTheme()"></header-component>
-    <main>
-        <myNameSection-component id="about-me-section"></myNameSection-component>
-        <shortDescription-component></shortDescription-component>
-        <div class="parallax"></div>
-        <skills-section id="software-skills-section"></skills-section>
-        <div class="parallax"></div>
-        <projects-section id="projects-section"></projects-section>
-        <contact-section id="contact-section"></contact-section>
-    </main>
+    <main-component></main-component>
     <footer-component></footer-component>
 </body>
