@@ -26,6 +26,9 @@ main {
     align-items: center;
 
     margin-top: 60px; //compensate absolute header height.
+    & > * {
+        scroll-margin-top: 200px;
+    }
 
     color: rgb(255, 255, 255);
     background-color: rgb(58, 97, 97);
