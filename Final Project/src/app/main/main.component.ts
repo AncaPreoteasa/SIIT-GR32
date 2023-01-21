@@ -1,4 +1,5 @@
 import { Component , ViewEncapsulation} from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'main-component',
@@ -8,6 +9,7 @@ import { Component , ViewEncapsulation} from '@angular/core';
 })
 
 export class MainComponent {
+
   downloadCvFile (){
     const link = document.createElement('a');
     link.setAttribute('target', '_blank');
@@ -16,6 +18,26 @@ export class MainComponent {
     document.body.appendChild(link);
     link.click();
     link.remove();
+
+    Swal.fire({
+      text:  "Successfully downloaded CV.",
+      showCancelButton: false
+    });
+  }
+
+  sendEmail() {
+    let formEl = <HTMLInputElement>document.getElementsByClassName("form-container")[0];
+    if (formEl.checkValidity()) {
+      Swal.fire({
+        text:  "Successfully sent email.",
+        showCancelButton: false
+      });
+    } else {
+      Swal.fire({
+        text:  "Please fill the required fields.",
+        showCancelButton: false
+      });
+    }
   }
 }
 
