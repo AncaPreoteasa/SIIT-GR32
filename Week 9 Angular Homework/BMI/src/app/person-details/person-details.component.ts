@@ -19,7 +19,7 @@ export class PersonDetailsComponent implements OnInit {
 
   ngOnInit():void {
     this.route.queryParams.subscribe(params => {
-      let personId:string = params['id'];
+      let personId:string = params['personId'];
       let allPersons:Person[] = this.personService.getAllPersons();
 
       for (let aPerson of allPersons) {
