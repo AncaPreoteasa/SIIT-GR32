@@ -94,7 +94,7 @@ body main .projects-section p {
 }
 body main .projects-section h2,
 body main .projects-section h3 {
-  padding: 30px;
+  padding: 10px;
 }
 body main .projects-section h2 {
   font-weight: 700;
@@ -105,6 +105,7 @@ body main .projects-section h3 {
 body main .projects-section .image-container {
   display: flex;
   flex-wrap: wrap;
+  margin: 100px 0;
 }
 body main .projects-section .image-container img {
   width: 300px;
