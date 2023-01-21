@@ -1,0 +1,54 @@
+@import '../mixins.scss';
+  
+.projects-section {
+    @include flex-sections;
+
+    p {
+        @include paragraph-font-size;
+    }
+
+    h2,
+    h3 {
+        padding: 10px;
+    }
+
+    h2 {
+        @include bold-headings;
+    }
+
+    h3 {
+        letter-spacing: 0.1em;
+    }
+
+    .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 50px 0;
+        
+        .column {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            & > * {
+                margin: 5px 10px;
+            }
+        }
+        
+        img {
+            width: 300px;
+            height: 300px;
+        }
+
+        img:hover {
+            filter: brightness(50%);
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+
+        }
+    }
+}

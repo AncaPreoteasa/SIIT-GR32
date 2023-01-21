@@ -1,0 +1,16 @@
+footer {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    justify-items: center;
+    align-items: center;
+    min-height: 80px;
+
+    .copyright-container {
+        margin: 0px;
+    }
+
+    background: rgba(90, 145, 126, 0.795);
+    body.dark-theme & {
+        background-color: rgba(46, 82, 70, 0.795);;
+    }
+}

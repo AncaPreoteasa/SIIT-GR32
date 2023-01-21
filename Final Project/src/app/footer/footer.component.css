@@ -1,0 +1,14 @@
+footer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  justify-items: center;
+  align-items: center;
+  min-height: 80px;
+  background: rgba(90, 145, 126, 0.795);
+}
+footer .copyright-container {
+  margin: 0px;
+}
+body.dark-theme footer {
+  background-color: rgba(46, 82, 70, 0.795);
+}/*# sourceMappingURL=footer.component.css.map */

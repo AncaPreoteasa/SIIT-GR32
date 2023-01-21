@@ -1,0 +1,52 @@
+body {
+    .parallax {
+        background-image: url("../assets/Images/desk.jpg");
+        height: 600px;
+        width: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        perspective: 1000px;
+    }
+
+    .parallax2 {
+        background-image: url("../assets/Images/laptop-sunlight.jpg");
+        height: 800px;
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        perspective: 1000px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: rgb(255, 255, 255);
+        background-color: rgb(58, 97, 97);
+    }
+}
+
+.dark-theme {
+    main {
+        background-color: rgb(35, 33, 33);
+        color: rgb(189, 189, 189);
+
+        .short-description-section,
+        .projects-section,
+        .contact-section {
+            background-color: rgb(30, 52, 52);
+        }
+
+        .short-description-section button {
+            color: rgb(97, 97, 97);
+        }
+
+        .projects-section .image-container image {
+            opacity: 0.8;
+        }
+    }
+}

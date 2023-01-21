@@ -1,0 +1,70 @@
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  margin: 5.5em 0.1em;
+  background-color: rgba(90, 145, 126, 0.795);
+}
+@media only screen and (max-width: 1024px) {
+  .contact-section {
+    margin: 3em 0.1em;
+  }
+}
+.contact-section .description-form-container {
+  display: flex;
+}
+@media only screen and (max-width: 1024px) {
+  .contact-section .description-form-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.contact-section .description-form-container p {
+  line-height: 1.9em;
+  font-size: 1.2em;
+}
+.contact-section .description-form-container > * {
+  margin: 20px;
+}
+.contact-section .description-form-container .description-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  max-width: 300px;
+}
+.contact-section .description-form-container .description-container .personal-description {
+  margin: 20px 0;
+}
+.contact-section .description-form-container .form-container {
+  display: flex;
+  flex-direction: column;
+}
+.contact-section .description-form-container .form-container > .name-email-container {
+  display: flex;
+  justify-content: space-between;
+}
+.contact-section .description-form-container .form-container #name,
+.contact-section .description-form-container .form-container #email,
+.contact-section .description-form-container .form-container #phone,
+.contact-section .description-form-container .form-container #message,
+.contact-section .description-form-container .form-container .send-button {
+  padding: 10px;
+}
+.contact-section .social-media-buttons {
+  display: inline;
+}
+.contact-section .social-media-buttons a {
+  padding: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid rgb(203, 203, 203);
+  margin: 0 10px;
+  border-radius: 20%;
+}
+.contact-section .social-media-buttons a:hover {
+  background-color: rgb(141, 195, 166);
+}/*# sourceMappingURL=contact-section.component.css.map */

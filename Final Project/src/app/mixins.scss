@@ -1,0 +1,42 @@
+@mixin flex-sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+    margin: 5.5em 0.1em;
+    background-color: rgba(90, 145, 126, 0.795);
+  
+    body.dark-theme & {
+      background-color: rgb(30, 52, 52);
+    }
+
+    @include devices(tablet) {
+      margin: 3em 0.1em;
+    }
+
+}
+
+@mixin bold-headings {
+    font-weight: 700;
+}
+
+@mixin paragraph-font-size {
+    font-size: 1.2em;
+}
+
+@mixin devices ($breakpoint) {
+  
+  @if $breakpoint == tablet {    
+    @media only screen and (max-width: 1024px) {
+      @content;
+    }
+  }
+ 
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 769px) {
+      @content;
+    }
+  }
+}

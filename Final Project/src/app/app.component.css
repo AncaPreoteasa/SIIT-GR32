@@ -1,0 +1,43 @@
+body .parallax {
+  background-image: url("../assets/Images/desk.jpg");
+  height: 600px;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  perspective: 1000px;
+}
+body .parallax2 {
+  background-image: url("../assets/Images/laptop-sunlight.jpg");
+  height: 800px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  perspective: 1000px;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(58, 97, 97);
+}
+
+.dark-theme main {
+  background-color: rgb(35, 33, 33);
+  color: rgb(189, 189, 189);
+}
+.dark-theme main .short-description-section,
+.dark-theme main .projects-section,
+.dark-theme main .contact-section {
+  background-color: rgb(30, 52, 52);
+}
+.dark-theme main .short-description-section button {
+  color: rgb(97, 97, 97);
+}
+.dark-theme main .projects-section .image-container image {
+  opacity: 0.8;
+}/*# sourceMappingURL=app.component.css.map */

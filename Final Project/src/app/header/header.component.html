@@ -1,0 +1,30 @@
+<header>
+      <!--  -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="navbar-brand" href="#">
+          <img src="../../assets/logo.png" width="30" height="30" alt="">
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleCollapsed()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" [ngClass]="{'collapse': collapsed, 'navbar-collapse': collapsed}" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <img class="nav-link" src="../../assets/moon.png" alt="dark mode icon" height="40" width="40" (click)="onClickDarkTheme()">
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about-me-section">ABOUT ME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#software-skills-section">SOFTWARE SKILLS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects-section">PROJECTS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact-section">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+</header>

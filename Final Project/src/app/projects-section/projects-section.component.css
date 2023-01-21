@@ -1,0 +1,55 @@
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  margin: 5.5em 0.1em;
+  background-color: rgba(90, 145, 126, 0.795);
+}
+body.dark-theme .projects-section {
+  background-color: rgb(30, 52, 52);
+}
+@media only screen and (max-width: 1024px) {
+  .projects-section {
+    margin: 3em 0.1em;
+  }
+}
+.projects-section p {
+  font-size: 1.2em;
+}
+.projects-section h2,
+.projects-section h3 {
+  padding: 10px;
+}
+.projects-section h2 {
+  font-weight: 700;
+}
+.projects-section h3 {
+  letter-spacing: 0.1em;
+}
+.projects-section .image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px 0;
+}
+.projects-section .image-container .column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.projects-section .image-container .column > * {
+  margin: 5px 10px;
+}
+.projects-section .image-container img {
+  width: 300px;
+  height: 300px;
+}
+.projects-section .image-container img:hover {
+  filter: brightness(50%);
+}
+.projects-section .image-container p {
+  text-align: center;
+  margin-top: 20px;
+}/*# sourceMappingURL=projects-section.component.css.map */

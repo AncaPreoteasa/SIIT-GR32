@@ -1,0 +1,53 @@
+@import '../mixins.scss';
+
+.my-name-section {
+    padding: 50px 20px;
+    @include devices(mobile) {
+        padding: 20px 10px 0 0;
+        font-size: 10px;
+    }
+
+    p {
+        @include paragraph-font-size;
+        line-height: 2.5em;
+    }
+
+    h1 {
+        font-size: 4em;
+        font-weight: 700;
+
+        @include bold-headings;
+
+        animation: my-name-load 600ms ease-in;
+        @keyframes my-name-load {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    h3 {
+        letter-spacing: 0.18em;
+        margin: 20px 0;
+
+        animation-name: slidein;
+        animation-duration: 2s;
+        animation-delay: 0.6s;
+        animation-iteration-count: 400s;
+        transition-timing-function: ease-in-out;
+        @keyframes slidein {
+            0% {
+                margin-left: 0;
+            }
+            50% {
+                margin-left: 300px;
+            }
+            100% {
+                margin-left: 0;
+            }
+        }
+    }
+}
