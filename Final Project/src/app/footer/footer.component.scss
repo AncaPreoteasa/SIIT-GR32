@@ -8,4 +8,8 @@ footer {
     .copyright-container {
         margin: 0px;
     }
+
+    body.dark-theme & {
+        background-color: rgb(222 222 222) !important //Blame bootstrap. I promise I won't use it again in the future
+    }
 }

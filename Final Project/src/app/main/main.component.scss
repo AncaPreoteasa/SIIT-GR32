@@ -10,7 +10,6 @@
     margin: 5.5em 0.1em;
 
     background-color: rgba(90, 145, 126, 0.795); //#41473e
-
     body.dark-theme & {
         background-color: rgb(30, 52, 52);
     }
@@ -30,16 +29,10 @@ main {
 
     margin-top: $header-height; //compensate absolute header height.
 
-    &>* {
-        scroll-margin-top: 200px;
-    }
-
     color: rgb(255, 255, 255);
     background-color: rgba(90, 145, 126);
-
-
     body.dark-theme & {
-        color: rgb(189, 189, 189);
+        color: rgb(218, 216, 216);
         background-color: #181818;
     }
 
@@ -66,7 +59,7 @@ main {
 
         .my-name-section-container {
             padding: 50px 20px;
-            text-shadow: 2px 2px black;
+            text-shadow: 1px 2px black;
 
             @include devices(mobile) {
                 padding: 20px 10px 0 0;
@@ -123,14 +116,13 @@ main {
     }
 
     .short-description-section {
-        //min-height: auto;
         background: url(../../assets/Images/forest.jpeg);
         background-size: cover;
         background-attachment: fixed;
 
         .short-description-section-container {
             @include flex-sections;
-            opacity: 0.8;
+            opacity: 0.9;
             text-shadow: 1px 1px black;
 
             @include devices(mobile) {
@@ -232,25 +224,6 @@ main {
                 letter-spacing: 0.1em;
             }
 
-            &.project-animation-start h2,
-            &.project-animation-start h3 {
-                animation-name: textAppear;
-                animation-duration: 5s;
-                animation-delay: 0.6;
-                transition-timing-function: ease-in-out;
-
-                @keyframes textAppear {
-                    0% {
-                        opacity: 0;
-                    }
-
-                    100% {
-                        opacity: 1;
-                    }
-                }
-
-            }
-
             .image-container {
                 display: flex;
                 flex-wrap: wrap;
@@ -270,16 +243,39 @@ main {
                 img {
                     width: 300px;
                     height: 300px;
+
+                    body.dark-theme & {
+                        opacity: 0.7;
+                    }
                 }
 
                 img:hover {
                     filter: brightness(50%);
+                    transform: scale(1.1);
                 }
 
                 p {
                     text-align: center;
                     margin-top: 20px;
 
+                }
+            }
+        }
+
+        &.project-animation-start h2,
+        &.project-animation-start h3 {
+            animation-name: textAppear;
+            animation-duration: 5s;
+            animation-delay: 0.6;
+            transition-timing-function: ease-in-out;
+
+            @keyframes textAppear {
+                0% {
+                    opacity: 0;
+                }
+
+                100% {
+                    opacity: 1;
                 }
             }
         }
@@ -351,6 +347,7 @@ main {
 
             .social-media-buttons {
                 display: inline;
+                padding-top: 10px;
 
                 a {
                     padding: 10px;

@@ -10,6 +10,6 @@ export class AppComponent {
   isDarkTheme = false;
   
   toggleDarkTheme() {
-    this.isDarkTheme = ! this.isDarkTheme;
+    this.isDarkTheme = !this.isDarkTheme;
   }
 }
