@@ -12,7 +12,7 @@
 }
 
 .bmi-status.overweight {
-    color: orange;
+    color: #e49400;
     font-size: 1.2em;
 }
 
@@ -24,6 +24,7 @@
 button {
     padding:5px;
     margin: 0 20px;
+    font-size: 20px;
 }
 
 table, th, td {

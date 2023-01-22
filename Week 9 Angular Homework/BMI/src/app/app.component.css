@@ -15,3 +15,9 @@ nav ul {
     list-style-type: none;  
 }    
 
+.image-container {
+    background-image: url(../assets/pexels-photo-1028599.jpeg);
+    height: 1000px;
+    width: 100%;
+    background-size: cover;
+}
