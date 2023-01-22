@@ -166,6 +166,22 @@ main {
             letter-spacing: 0.1em;
         }
 
+        &.project-animation-start h2, &.project-animation-start h3 {
+            animation-name: textAppear;
+            animation-duration: 5s;
+            animation-delay: 0.6;
+            transition-timing-function: ease-in-out;
+            @keyframes textAppear {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+        }
+
         .image-container {
             display: flex;
             flex-wrap: wrap;

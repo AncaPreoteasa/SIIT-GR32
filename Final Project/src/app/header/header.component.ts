@@ -10,8 +10,19 @@ import { Output, EventEmitter } from '@angular/core';
 
 export class HeaderComponent {
   startProgressBarTransition() {
-    document.getElementsByClassName("skill-bars-container")[0].classList.add("progress-start")
-    
+    let sectionElement = document.getElementsByClassName("skill-bars-container")[0];
+    sectionElement.classList.remove("progress-start");
+    setTimeout(function() {
+      sectionElement.classList.add("progress-start");
+    });
+  }
+
+  slideProjectSectionHeadings() {
+    let sectionElement = document.getElementsByClassName("projects-section")[0];
+    sectionElement.classList.remove("project-animation-start");
+    setTimeout(function() {
+      sectionElement.classList.add("project-animation-start");
+    });
   }
 
   @Output() toggleDarkThemeEvent = new EventEmitter<void>();
