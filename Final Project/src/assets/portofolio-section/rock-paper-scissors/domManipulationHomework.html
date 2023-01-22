@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="author" content="Anca Preoteasa">
+        <title>JavaScript Rock, Paper, Scissors DOM Manipulation - Homework</title>
+        <meta charset="utf-8>">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Week 6/global.css">
+        <link rel="stylesheet" href="domManipulationHomework.css">
+    </head>
+
+    <body>
+
+        <div id="intro-game" class="intro-h1-play-btn">
+            <h1>Rock Paper Scissors</h1>
+            <button id="play-btn">PLAY</button>
+            <div>
+                <img src="rock paper scissors images/rock-paper-scissors.jpg" class="rock-paper-scissors-intro-img"
+                    width="200" height="200"></img>
+            </div>
+        </div>
+
+        <div class="hidden" id="game">
+            <div class="score-text-counter">
+                <div>
+                    <h2>Player</h2>
+                    <p id="counter-player-winner">0</p>
+                </div>
+                <div id="vs-text">
+                    <h3>VS</h3>
+                </div>
+                <div>
+                    <h2>Computer</h2>
+                    <p id="counter-computer-winner">0</p>
+                </div>
+            </div>
+            <h2 class="choose-text">Choose</h2>
+            <div class="rock-paper-scissors-container">
+                <img src="rock paper scissors images/rock.svg"
+                    class="rock-image rock-paper-scissors-images" width="100" height="100" alt="rock image"></img>
+                <img src="rock paper scissors images/paper.svg" 
+                    class="paper-image rock-paper-scissors-images" width="100" height="100" alt="paper image"></img>
+                <img src="rock paper scissors images/scissors.svg" 
+                    class="scissors-image rock-paper-scissors-images" width="100" height="100" alt="scissors image"></img>
+            </div>
+            <div>
+                <h2 id="winner-announcement"></h2>
+                <h2 id="winner-explanation"></h2>
+            </div>
+        </div>
+        
+        <audio src="audio/intro.wav" id="intro-sound"></audio>
+        <audio src="audio/lose.wav" id="lose-sound"></audio>
+        <audio src="audio/victory.wav" id="win-sound"></audio>
+        <audio src="audio/draw.wav" id="draw-sound"></audio>
+        
+        <script src="domManipulationHomework.js"></script>
+    </body>
+</html>

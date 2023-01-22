@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+    <style>
+        .anca-zone {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            min-height: fit-content;
+        }
+
+        .countdown-zone {
+            display: flex;
+            padding: 10px 0 50px 0;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .countdown-days {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .countdown-number {
+            color: #BCA680;
+            font-family: "DM Sans", Sans-serif;
+            font-size: 42px;
+            font-weight: 400;
+            align-self: center;
+        }
+
+        .countdown-type {
+            color: #BCA680;
+            font-family: "Playball", Sans-serif;
+            font-size: 32px;
+            font-weight: 200;
+            text-transform: capitalize;
+            align-self: center;
+        }
+
+        .small-separator {
+            padding-top: 10px;
+            height: auto;
+            max-width: 100%;
+        }
+
+        .text-emotion {
+            color: #BCA680;
+            font-family: "DM Sans", Sans-serif;
+            font-size: 21px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 3.3px;
+            padding-top: 10px;
+        }
+
+        .text-invitation {
+            color: #62875C;
+            font-family: "Alex Brush", Sans-serif;
+            font-weight: 400;
+            font-size: 32px;
+            padding-top: 15px;
+        }
+        .couple-portrait {
+            margin-top: 60px;
+            position: relative;
+            height: 400px;
+            width: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .couple {
+            position: absolute;
+            width: 85%;
+            border-radius: 100% 100% 100% 100%;
+        }
+        .big-portrait {
+            position: absolute;
+            width: 100%;
+            top: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="anca-zone">
+        <div class="countdown-zone">
+            <div class="countdown-days">
+                <div class="countdown-number">625</div>
+                <div class="countdown-type">zile</div>
+            </div>
+            <div class="countdown-days">
+                <div class="countdown-number">03</div>
+                <div class="countdown-type">ore</div>
+            </div>
+            <div class="countdown-days">
+                <div class="countdown-number">25</div>
+                <div class="countdown-type">minute</div>
+            </div>
+            <div class="countdown-days">
+                <div class="countdown-number">01</div>
+                <div class="countdown-type">secunde</div>
+            </div>
+        </div>
+        <div class="couple-portrait">
+            <img src="images/couple.jpg" class="couple"></img>
+            <img src="images/shape.png" class="big-portrait"></img>
+        </div>
+        <img src="images/flower.png" class="small-separator"></img>
+        <h2 class="text-emotion">- Cu inimile pline de bucurie -</h2>
+        <h2 class="text-invitation">Vă invităm să ne fiți alături!</h2>
+    </div>
+</body>
+
+</html>

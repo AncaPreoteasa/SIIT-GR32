@@ -1,0 +1,139 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .is-obese-class {
+            font-size: 4em;
+        }
+        .is-obese-class span {
+            color: red;
+            cursor: pointer;
+        }
+
+        .is-overweight-class {
+            font-size: 3em;
+        }
+        .is-overweight-class span {
+            color: orange;
+            cursor: pointer;
+        }
+        
+        .is-normal-class span {
+            color: green;
+            cursor: pointer;
+        }
+
+        .is-underweight-class {
+            font-size: 1em;
+        }
+        .is-underweight-class span {
+            color: blue;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script>
+        class Person {
+            constructor(name, gender, height, weight){
+                this.name = name;
+                this.gender = gender;
+                this.height = height;
+                this.weight = weight;
+            }    
+            calculateBMI(){
+                return (this.weight / (this.height * this.height)).toFixed(2);
+            }
+        }
+
+        const person1 = new Person("John Doe", "M", 1.77, 90);
+        const person2 = new Person("Mary Anne", "F", 1.65, 60);
+        const person3 = new Person("George Smith", "M", 1.97, 150);
+        const person4 = new Person("Helen Hilton", "F", 1.60, 30);
+
+        const personArray = [person1, person2, person3, person4];
+
+        for (var i = 0; i < personArray.length; i++) {
+            const currentPerson = personArray[i];
+            const currentPersonBMI = currentPerson.calculateBMI();
+            const bmiStatus = decideWeightStatus(currentPersonBMI);
+
+            showOutputMessage(currentPerson, currentPersonBMI, bmiStatus);
+        }
+
+        function decideWeightStatus(bmi) {
+            let bmiStatus;
+
+            if (bmi < 18.5) {
+                bmiStatus = "Underweight";
+            } else if (bmi < 25) {
+                bmiStatus = "Normal Weight";
+            } else if (bmi < 30) {
+                bmiStatus = "Overweight";
+            } else {
+                bmiStatus = "Obese";
+            }
+
+            return bmiStatus;
+        }
+        
+        function showOutputMessage(person, bmi, weightStatus) {
+            const h1 = document.createElement("h1");
+            const textToShow = person.name + " | " + person.gender + " | BMI: " + bmi + " | ";
+            h1.appendChild(document.createTextNode(textToShow));
+
+            const weightStatusElement = document.createElement("span");
+            const weightStatusTextNode = document.createTextNode(weightStatus);
+            weightStatusElement.appendChild(weightStatusTextNode);
+
+            h1.appendChild(weightStatusElement);
+
+            const container = document.getElementById("container");
+            container.appendChild(h1);
+
+            let textDependOnWeightStatus;
+            if (weightStatus === "Obese") {
+                h1.setAttribute("class", "is-obese-class");
+                textDependOnWeightStatus = "Obesity is a medical condition, sometimes considered a disease,[8][9][10] in which excess body fat has accumulated to such an extent that it may negatively affect health. ";
+            } else if (weightStatus === "Overweight") {
+                h1.setAttribute("class", "is-overweight-class");
+                textDependOnWeightStatus = "Being overweight or fat is having more body fat than is optimally healthy. Being overweight is especially common where food supplies are plentiful and lifestyles are sedentary.";
+            } else if (weightStatus === "Normal Weight") {
+                h1.setAttribute("class", "is-normal-class");
+                textDependOnWeightStatus = "Ideal body weight (IBW) was initially introduced by Ben J. Devine in 1974 to allow estimation of drug clearances in obese patients.";
+            } else {
+                h1.setAttribute("class", "is-underweight-class");
+                textDependOnWeightStatus = "An underweight person is a person whose body weight is considered too low to be healthy. A person who is underweight is malnourished.";
+            }
+
+
+            const textOnClickContainer = document.createElement("div");
+            container.appendChild(textOnClickContainer);
+
+            weightStatusElement.addEventListener("click", function () {
+                let theMainContainerId = "container";
+                showTextMessage(textDependOnWeightStatus, textOnClickContainer);
+            });
+        }
+
+        function showTextMessage (text, container) {
+            const textParagraph = document.createElement("p");
+            const paragraphText = document.createTextNode(text);
+
+            textParagraph.appendChild(paragraphText);
+
+            container.appendChild(textParagraph);
+        }
+
+    </script>
+</body>
+
+</html>
