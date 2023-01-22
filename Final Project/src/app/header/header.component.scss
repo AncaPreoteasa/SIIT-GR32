@@ -5,8 +5,15 @@ header {
     top: 0;
     width: 100%;
     z-index: 1;
-      
+    
     nav {
+        .logo-suffix {
+            display: none;
+            @include devices(tablet) {
+                display: inline;
+            }
+        }
+
         display: grid !important; // Boostrap's fault that it used important first so I don't have any options.
         grid-template-columns: 1fr auto 1fr;
 
