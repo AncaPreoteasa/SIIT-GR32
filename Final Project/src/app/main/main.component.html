@@ -1,16 +1,15 @@
 <main>
-    <section class="my-name-section" id="about-me-section">
+    <section class="my-name-section parallax bg" id="about-me-section">
         <h1>I<span class="accent-color">'</span>M<br>ANCA<br>PREOTEASA <span class="accent-color">.</span></h1>
         <h3>WEB<br>DEVELOPER</h3>
     </section>
 
-    <section class="short-description-section">
-        <img src="../../assets/anca-preoteasa.png" height="200" width="200" />
+    <section class="short-description-section no-parallax">
         <p>Eager to make use of the skills I have already achieved, as well as developing new ones.</p>
         <button type="button" class="btn btn-outline-light" (click)="downloadCvFile()">DOWNLOAD RESUME</button>
     </section>
 
-    <section class="skills-section" id="software-skills-section">
+    <section class="skills-section no-parallax" id="software-skills-section">
         <h2>01 SOFTWARE SKILLS</h2>
         <div class="skill-bars-container">
             <p>HTML</p>
@@ -44,7 +43,7 @@
         </div>
     </section>
 
-    <section class="projects-section" id="projects-section">
+    <section class="projects-section no-parallax" id="projects-section">
         <h2>02 PROJECTS</h2>
         <h3>MY LATEST WORK</h3>
         <div class="image-container">
@@ -80,7 +79,7 @@
         </div>
     </section>
 
-    <section class="contact-section" id="contact-section">
+    <section class="contact-section no-parallax" id="contact-section">
         <div class="description-form-container">
             <div class="description-container">
                 <h4>CONTACT</h4>
@@ -103,4 +102,5 @@
         </div>
     </section>
 
+    <footer-component></footer-component>
 </main>

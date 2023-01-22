@@ -20,12 +20,6 @@
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    margin-top: 60px; //compensate absolute header height.
     & > * {
         scroll-margin-top: 200px;
     }
@@ -43,6 +37,12 @@ main {
 
     .my-name-section {
         padding: 50px 20px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
         @include devices(mobile) {
             padding: 20px 10px 0 0;
@@ -217,6 +217,7 @@ main {
 
     .contact-section {
         @include flex-sections;
+        margin-bottom: 0 !important;
 
         .description-form-container {
             @include devices(tablet) {
@@ -291,3 +292,44 @@ main {
         }
     }
 }
+
+body {
+    overflow: hidden;
+}
+main {
+    margin-top: 72px;
+    height: calc(100vh - 72px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+    section {
+        transform-style: preserve-3d;
+        position: relative;
+        height: calc(100vh - 72px);
+
+        &.no-parallax {
+            z-index: 999;
+        }
+
+        &.parallax {
+            &.bg::after {
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                    url("https://picsum.photos/1080/720");
+                background-size: cover;
+            }
+            &::after {
+                content: " ";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                transform: translateZ(-1px) scale(1.5);
+                background-size: 100%;
+                z-index: -1;
+            }
+        }
+
+    }
+}
+  
