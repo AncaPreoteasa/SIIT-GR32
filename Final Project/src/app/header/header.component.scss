@@ -7,6 +7,8 @@ header {
     z-index: 1;
     
     nav {
+        padding-right: 7px !important;
+
         .logo-suffix {
             display: none;
             @include devices(tablet) {
