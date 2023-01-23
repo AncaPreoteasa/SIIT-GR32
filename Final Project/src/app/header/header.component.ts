@@ -17,7 +17,7 @@ export class HeaderComponent {
     });
   }
 
-  slideProjectSectionHeadings() {
+  appearProjectSectionHeadings() {
     let sectionElement = document.getElementsByClassName("projects-section")[0];
     sectionElement.classList.remove("project-animation-start");
     setTimeout(function() {

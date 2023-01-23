@@ -10,6 +10,7 @@
     margin: 5.5em 0.1em;
 
     background-color: rgba(90, 145, 126, 0.795); //#41473e
+
     body.dark-theme & {
         background-color: rgb(30, 52, 52);
     }
@@ -31,6 +32,7 @@ main {
 
     color: rgb(255, 255, 255);
     background-color: rgba(90, 145, 126);
+
     body.dark-theme & {
         color: rgb(218, 216, 216);
         background-color: #181818;
@@ -86,6 +88,7 @@ main {
                         transform: translateY(0);
                     }
                 }
+
             }
 
             h3 {
@@ -109,6 +112,22 @@ main {
 
                     100% {
                         margin-left: 0;
+                    }
+                }
+
+                @include devices(mobile) {
+                    @keyframes slidein {
+                        0% {
+                            margin-left: 0;
+                        }
+
+                        50% {
+                            margin-left: 100px;
+                        }
+
+                        100% {
+                            margin-left: 0;
+                        }
                     }
                 }
             }
@@ -202,8 +221,11 @@ main {
     }
 
     .projects-section {
-
         .projects-section-container {
+            @include devices(mobile) {
+                width: 100vw;
+            }
+
             @include flex-sections;
             text-shadow: 1px 1px black;
 
@@ -289,6 +311,10 @@ main {
 
         .contact-section-container {
             @include flex-sections;
+
+            @include devices(mobile) {
+                width: 100vw;
+            }
 
             .description-form-container {
                 @include devices(tablet) {

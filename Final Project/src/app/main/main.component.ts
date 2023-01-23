@@ -34,7 +34,7 @@ export class MainComponent {
       });
     } else {
       Swal.fire({
-        text:  "Please fill the required fields.",
+        text:  "Please fill in the required fields.",
         showCancelButton: false
       });
     }
