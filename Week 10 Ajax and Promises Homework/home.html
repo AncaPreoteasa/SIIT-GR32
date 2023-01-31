@@ -48,14 +48,16 @@
                 fetch(apiURL + "/" + productId, {
                     method: 'DELETE',
                 })
-                    .then(res => res.json())
-                    .then(responseJson => {
-                        if (responseJson.isDeleted === true) {
-                            tableRow.remove();
-                            alert("The product '" + title + "' has been removed.")
-                        }
-                    })
-                    .catch(error => console.log('Error ' + error));
+                .then(res => res.json())
+                .then(responseJson => {
+                    if (responseJson.isDeleted === true) {
+                        tableRow.remove();
+                        alert("The product '" + title + "' has been removed.")
+                    } else {
+                        alert("Delete doesn't work on new products.")
+                    }
+                })
+                .catch(error => console.log('Error ' + error));
             });
 
             const tableDataUpdateBtn = document.createElement('td');
@@ -66,22 +68,24 @@
             updateBtn.append(updateTextBtn);
             updateBtn.addEventListener('click', function () {
                 const newTitle = prompt("Please enter product name", title);
-                fetch(apiURL + "/" + productId, {
-                    method: 'PUT',
-                    header: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        title: newTitle
+                if (newTitle.length > 0) {
+                    fetch(apiURL + "/" + productId, {
+                        method: 'PUT',
+                        header: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            title: newTitle
+                        })
                     })
-                })
-                .then(res => res.json())
-                .then(responseJson => {
-                    if (newTitle != null) {
+                    .then(res => res.json())
+                    .then(responseJson => {
                         const newTitleTextNode = document.createTextNode(newTitle);
                         tableData.append(newTitleTextNode);
                         textNode.remove();
-                    }
-                })
-                .catch(error => console.log('Error ' + error));
+                    })
+                    .catch(error => console.log('Error ' + error));
+                } else {
+                    alert("Please enter a product name.");
+                }
             })
         };
 
@@ -92,46 +96,48 @@
 
         addProductBtn.addEventListener('click', function () {
             const newProductName = prompt("Please enter product name");
-            fetch(apiURL + "/add", {
-                method: "POST",
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    title: newProductName
+            if (newProductName.length > 0) {
+                fetch(apiURL + "/add", {
+                    method: "POST",
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        title: newProductName
+                    })
                 })
-            })
-            .then(res => res.json())
-            .then(responseJson => {
-                if (newProductName !== null) {
+                .then(res => res.json())
+                .then(responseJson => {
                     createTableRow(newProductName, document.getElementById("table-id"), responseJson.id);
-                }
-            })
-            .catch(error => console.log('Error ' + error));
+                })
+                .catch(error => console.log('Error ' + error));
+            } else {
+                alert("please enter a product name.")
+            }
         });
 
         fetch(apiURL)
-        .then(response => response.json())
-        .then(responseJson => {
-            let products = responseJson.products;
+            .then(response => response.json())
+            .then(responseJson => {
+                let products = responseJson.products;
 
-            const table = document.createElement('table');
-            table.setAttribute("id", "table-id");
-            document.body.appendChild(table);
-            const tableHeaderRow = document.createElement('tr');
-            table.append(tableHeaderRow);
-            const tableHeader = document.createElement('th');
-            tableHeaderRow.appendChild(tableHeader);
-            const tableHeaderText = document.createTextNode("Product Name");
-            tableHeader.append(tableHeaderText);
+                const table = document.createElement('table');
+                table.setAttribute("id", "table-id");
+                document.body.appendChild(table);
+                const tableHeaderRow = document.createElement('tr');
+                table.append(tableHeaderRow);
+                const tableHeader = document.createElement('th');
+                tableHeaderRow.appendChild(tableHeader);
+                const tableHeaderText = document.createTextNode("Product Name");
+                tableHeader.append(tableHeaderText);
 
-            for (let i = 0; i < products.length; i++) {
-                let product = products[i];
-                let productId = product.id;
+                for (let i = 0; i < products.length; i++) {
+                    let product = products[i];
+                    let productId = product.id;
 
-                let title = product.title;
-                createTableRow(title, table, productId);
-            }
-        })
-        .catch(error => console.log('Error ' + error));
+                    let title = product.title;
+                    createTableRow(title, table, productId);
+                }
+            })
+            .catch(error => console.log('Error ' + error));
     </script>
 
 </body>
