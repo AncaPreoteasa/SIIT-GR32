@@ -30,7 +30,7 @@
         //API documentation: https://dummyjson.com/docs/products
         const apiURL = "https://dummyjson.com/products";
 
-        function createTableRow(title, table) {
+        function createTableRow(title, table, productId) {
             const tableRow = document.createElement('tr');
             table.append(tableRow);
             const tableData = document.createElement('td');
@@ -128,7 +128,7 @@
                 let productId = product.id;
 
                 let title = product.title;
-                createTableRow(title, table);
+                createTableRow(title, table, productId);
             }
         })
         .catch(error => console.log('Error ' + error));
