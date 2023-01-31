@@ -102,7 +102,7 @@
             .then(res => res.json())
             .then(responseJson => {
                 if (newProductName !== null) {
-                    createTableRow(newProductName, document.getElementById("table-id"))
+                    createTableRow(newProductName, document.getElementById("table-id"), responseJson.id);
                 }
             })
             .catch(error => console.log('Error ' + error));
