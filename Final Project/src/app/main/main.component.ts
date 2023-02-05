@@ -26,11 +26,42 @@ export class MainComponent {
   }
 
   sendEmail() {
-    let formEl = <HTMLInputElement>document.getElementsByClassName("form-container")[0];
+    let formEl = <HTMLFormElement>document.getElementsByClassName("form-container")[0];
     if (formEl.checkValidity()) {
-      Swal.fire({
-        text:  "Successfully sent email.",
-        showCancelButton: false
+      var data = new FormData(formEl);
+      fetch("https://formspree.io/f/mwkjvgrp", {
+        method: "POST",
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          formEl.reset();
+          Swal.fire({
+            text:  "Successfully sent email.",
+            showCancelButton: false
+          });
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              Swal.fire({
+                text:  "Failed to send email.",
+                showCancelButton: false
+              });
+            } else {
+              Swal.fire({
+                text:  "Failed to send email.",
+                showCancelButton: false
+              });
+            }
+          })
+        }
+      }).catch(error => {
+        Swal.fire({
+          text:  "Failed to send email.",
+          showCancelButton: false
+        });
       });
     } else {
       Swal.fire({

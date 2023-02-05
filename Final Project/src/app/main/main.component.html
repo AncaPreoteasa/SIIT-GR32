@@ -100,13 +100,13 @@
                     <p class="personal-description">Ambitious. Committed. Diligent. Looking forward to working with you.</p>
                     <p>preoteasaanca95@gmail.com</p>
                 </div>
-                <form class="form-container">
+                <form   class="form-container" >
                     <div class="name-email-container">
-                        <input class="form-control mb-2 me-2" id="name" placeholder="Name" required="">
-                        <input class="form-control mb-2" id="email" placeholder="Email" required="">
+                        <input class="form-control mb-2 me-2" id="name" placeholder="Name" name="name" required="">
+                        <input class="form-control mb-2" id="email" placeholder="Email" name="email" required="">
                     </div>
-                    <input class="form-control mb-2" id="phone" placeholder="Phone">
-                    <textarea class="form-control mb-2" id="message" placeholder="Message" required=""></textarea>
+                    <input class="form-control mb-2" id="phone" name="phone" placeholder="Phone">
+                    <textarea class="form-control mb-2" id="message" placeholder="Message" name="message" required=""></textarea>
                     <button type="button" class="btn btn-outline-light send-button" (click)="sendEmail()">Send</button>
                 </form>
             </div>
